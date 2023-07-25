@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@await Html.PartialAsync("_Intro")
+
+@await Html.PartialAsync("_About")
+
+@await Html.PartialAsync("_Portfolio");
+
+@await Html.PartialAsync("_Services");
+
+@await Html.PartialAsync("_Testimonials");
+
+@await Html.PartialAsync("_Contact",Model.ContactModel);

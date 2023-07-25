@@ -1,0 +1,24 @@
+﻿<!-- Intro
+            ============================================= -->
+<section id="home">
+    <div class="hero-wrap">
+        <div class="hero-mask opacity-8 bg-dark"></div>
+        <div class="hero-bg parallax" style="background-image:url('images/intro-image.png');"></div>
+        <div class="hero-content section d-flex min-vh-100">
+            <div class="container my-auto">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="text-7 fw-500 text-white mb-2 mb-md-3">Hi,</p>
+                        <h2 class="text-16 fw-600 text-white mb-2 mb-md-3">I'm Mark Carter.</h2>
+                        <p class="text-5 text-light mb-4">A software developer with experience using the following technologies...</p>
+                        @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(new List<string> {"html","css","javascript","gap","csharp","dotnet","gap","azure"}))
+                        <p class="text-5 text-light mb-4">Please check out my portfolio, code and more about me...</p>
+                        <a href="#contact" class="btn btn-outline-primary rounded-pill shadow-none smooth-scroll mt-2">Hire Me</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#about" class="scroll-down-arrow text-white smooth-scroll"><span class="animated"><i class="fa fa-chevron-down"></i></span></a>
+        </div>
+    </div>
+</section>
+<!-- Intro end -->

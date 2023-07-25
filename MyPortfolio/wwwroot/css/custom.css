@@ -1,0 +1,72 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Handling Updates
+-----------------------------------------------------------------*/
+
+
+
+/*=== Developer Icons ===*/
+
+.developer-icons{
+	column-gap: 60px;
+	justify-content:center;
+
+}
+
+
+/*=== 5.5 Tabs ===*/
+
+
+img.code-icon{
+	height: 50px;
+}
+
+.portfolio-grid{
+	display: grid;
+	grid-template-rows: 1fr max-content;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+		'whaddonshow whaddonshow development'
+		'care workflow development';
+	grid-gap: 1em;
+	align-content: stretch;
+}
+
+.project{
+	object-fit: contain;
+}
+
+.project-title{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 0.5em;
+	text-align: right;
+	background: radial-gradient(at 100% 20%, rgba(0,0,0,0.5), 50%, transparent,90%, transparent 100%);
+	font-size: 1em;
+
+}
+
+.dimmed img{
+
+	filter: grayscale(100%) brightness(50%);
+
+}
+
+#whaddon-show {
+	grid-area: whaddonshow;
+}
+
+#care {
+	grid-area: care;
+}
+
+#development {
+	grid-area: development;
+}
+
+#workflow{
+	grid-area: workflow;
+}
