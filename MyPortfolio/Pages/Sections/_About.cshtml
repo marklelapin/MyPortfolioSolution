@@ -1,5 +1,14 @@
-﻿<!-- About
-            ============================================= -->
+﻿@using MyPortfolio.Pages.Shared;
+@{
+
+    var now = DateTime.UtcNow;
+    var started = new DateTime(2023, 03, 01);
+
+    var retrainingTime = (now.Year - started.Year) * 12 + now.Month - started.Month;
+}
+
+<!-- About
+============================================= -->
 <section id="about" class="section bg-dark-1">
     <div class="container">
         <!-- Heading -->
@@ -12,8 +21,9 @@
         <div class="row gy-5">
             <div class="col-lg-7 col-xl-8 text-center text-lg-start">
                 <h2 class="text-7 text-white fw-600 mb-3">I'm <span class="text-primary">Mark Carter,</span> a Software Developer</h2>
-                <p class="text-white-50">I have 10 years’ experience in scoping, designing, coding, and managing the implementation of digital projects using SQL, C#, .Net and vba to interface with 3rd party web applications, and Microsoft Excel</p>
+                <p class="text-white-50">I have 10 years’ experience in scoping, designing, coding, and managing the implementation of software applications using SQL, C#, .Net and VBA to solve business problems.</p>
                 <p class="text-white-50">Due to success in establishing and using these systems I was promoted into more and more senior roles finally ending up as a Chief Operating Officer. However, having paid off the mortgage, got the T-shirt and grown tired of the politics in these positions I am now looking to return to the work that I found most intellectually stimulating and fun.</p>
+                <p class="text-white-50">I've spent the last @retrainingTime months getting back up to speed with these technologies and have focussed on <span class="text-primary">The Whaddon Show App</span> in particular within my portfolio to demonstrate my full range of skills.</p>
             </div>
             <div class="col-lg-5 col-xl-4">
                 <div class="ps-lg-4">
@@ -29,20 +39,24 @@
         <div class="brands-grid separator-border separator-border-light mt-5">
             <div class="row">
                 <div class="col-6 col-md-3">
-                    <div class="featured-box text-center">
-                        <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="10">10</span>+</h4>
-                        <p class="text-light mb-0">Years Experience</p>
-                    </div>
+                    @await Html.PartialAsync("_NumberBox",new _NumberBoxModel("10","Years Experience"))
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="featured-box text-center">
-                        <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="1000">1000</span>+</h4>
+                        <h4 class="text-12 text-white-50 mb-0"><span>1000</span>+</h4>
                         <p class="text-light mb-0">Internal Users</p>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="featured-box text-center">
-                        <h4 class="text-12 text-white-50 mb-0"><span class="counter" data-from="0" data-to="5">5</span></h4>
+                        <h4 class="text-12 text-white-50 mb-0"><span>5</span></h4>
+                        <p class="text-light mb-0">Major Applications Established</p>
+                        <p class="text-light mb-0">more than 7 years</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="featured-box text-center">
+                        <h4 class="text-12 text-white-50 mb-0"><span>5</span></h4>
                         <p class="text-light mb-0">Major Applications Established</p>
                         <p class="text-light mb-0">more than 7 years</p>
                     </div>
@@ -53,3 +67,6 @@
     </div>
 </section>
 <!-- About end -->
+<script>
+   
+</script>

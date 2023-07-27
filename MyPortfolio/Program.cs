@@ -7,7 +7,8 @@ builder.Services.AddRazorPages();
 
 builder.Services.Configure<RazorViewEngineOptions>(options =>
 {
-    options.PageViewLocationFormats.Add("/Pages/ProjectPartials/{0}" + RazorViewEngine.ViewExtension);
+    options.PageViewLocationFormats.Add("/Pages/Projects/{0}" + RazorViewEngine.ViewExtension);
+    options.PageViewLocationFormats.Add("/Pages/Sections/{0}" + RazorViewEngine.ViewExtension);
 });
 
 var app = builder.Build();

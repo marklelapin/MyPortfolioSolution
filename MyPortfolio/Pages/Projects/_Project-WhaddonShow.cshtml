@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = "_ProjectLayout";
+}
+
+@section Title{
+    The Whaddon Show App
+}
+
+
+@section Carousel{
+    <!--carousel item---------------->
+    <div class="item">
+        <img class="img-fluid" alt="" src="images/projects/project-1.jpg">
+    </div>
+    <!---------------------end item-->
+    <!--carousel item---------------->
+    <div class="item">
+        <img class="img-fluid" alt="" src="images/projects/project-5.jpg">
+    </div>
+    <!---------------------end item-->
+}
+
+@section ProjectInfo{
+
+    @{
+        var projectInfoModel = new _ProjectInfoModel();
+        projectInfoModel.Description = "A collaborative script writing and show management tool.";
+        projectInfoModel.Organisation = "The Whaddon Entertainers";
+        projectInfoModel.Users = "40 External Users";
+        projectInfoModel.From = "Sep 23";
+        projectInfoModel.To = "Present";
+        projectInfoModel.Problem = "Todo";
+        projectInfoModel.Solution = "The Whaddon Show App can be used offline and syncs changes to the script when online access is available. It also has a handy tool to rearrange scenes and see the affect of these on costume changes etc";
+        projectInfoModel.MyInvolvement = new List<string>() {
+                                            "This is all my work and includes:"
+                                            , "sfsjdkfjds"
+                                            , "sdfjsfksk" };
+
+        projectInfoModel.Urls = new List<string>() {
+                                        "thewhaddonshow.com"
+                                        ,"thewhaddonshow-api.com"
+                                        ,"thewhaddonshow-apimonitor.com"
+                                        };
+        
+    }
+
+    @await Html.PartialAsync("_ProjectInfo",projectInfoModel)
+    
+}

@@ -7,8 +7,16 @@
 
 
 
+
+/*=== Intro Icons ===*/
+
+
 /*=== Developer Icons ===*/
 
+#home .developer-icons{
+	margin-top: 2em;
+	margin-bottom:2em
+}
 .developer-icons {
 	column-gap: 60px;
 	justify-content: center;
@@ -30,7 +38,12 @@
 	margin: auto;
 }
 
+.project-list-indent{
+	padding-left: 6em;
+}
+
 /*=== 5.5 Tabs ===*/
+
 
 
 img.code-icon{
@@ -71,6 +84,9 @@ img.code-icon{
 	filter: grayscale(100%) brightness(50%);
 
 }
+
+
+
 
 #whaddon-show {
 	grid-area: whaddonshow;

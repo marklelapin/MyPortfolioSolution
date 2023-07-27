@@ -1,0 +1,34 @@
+﻿@using MyPortfolio.Pages.Shared;
+<!-- Services
+            ============================================= -->
+<section id="services" class="section bg-dark-2">
+    <div class="container">
+        <!-- Heading -->
+        <div class="position-relative d-flex text-center mb-5">
+            <h2 class="text-24 text-white-50 opacity-1 text-uppercase fw-600 w-100 mb-0">Skills</h2>
+            <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">What I Do?<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
+        </div>
+        <!-- Heading end-->
+
+        <div class="row">
+            <div class="col-lg-11 mx-auto">
+                <div class="row">
+                    <div class="col-md-6">
+                       @await Html.PartialAsync("_SkillBox",new _SkillBoxModel("people-arrows","I talk to people","to understand what they want."))
+                    </div>
+                    <div class="col-md-6">
+                       @await Html.PartialAsync("_SkillBox",new _SkillBoxModel("file-code","I look at existing systems and data","to understand how they work."))
+                    </div>
+                    <div class="col-md-6">
+                       @await Html.PartialAsync("_SkillBox",new _SkillBoxModel("laptop-code","I design new applications or improve existing ones","to solve problems efficiently and effectively."))
+                    </div>
+                    <div class="col-md-6">
+                       @await Html.PartialAsync("_SkillBox",new _SkillBoxModel("keyboard","I code","using recognised coding patterns, unit testing and monitoring."))
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services end -->
