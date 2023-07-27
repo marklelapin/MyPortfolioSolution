@@ -118,7 +118,7 @@ $(".owl-carousel").each(function (index) {
 /*------------------------------------
     Magnific Popup
 -------------------------------------- */
-// Image on Modal
+ //Image on Modal
 $('.popup-img-gallery').each(function() {
 $(this).magnificPopup({
     delegate: '.popup-img:visible',
@@ -189,13 +189,13 @@ $(this).magnificPopup({
 });
 });
 
-// YouTube/Viemo Video & Gmaps
-$('.popup-youtube, .popup-vimeo, .popup-gmaps').each(function() {
-$(this).magnificPopup({
-        type: 'iframe',
-		mainClass: 'mfp-fade',
-});
-});
+//// YouTube/Viemo Video & Gmaps
+//$('.popup-youtube, .popup-vimeo, .popup-gmaps').each(function() {
+//$(this).magnificPopup({
+//        type: 'iframe',
+//		mainClass: 'mfp-fade',
+//});
+//});
 
 ///*------------------------------------
 //    Isotope Portfolio Filter
@@ -244,26 +244,26 @@ $(".counter").each(function () {
     });
 });
 
-/*------------------------------------
-    Typed
--------------------------------------- */
-$(".typed").each(function() {
-var typed = new Typed('.typed', {
-    stringsElement: '.typed-strings',
-	loop: true,
-	typeSpeed: 100,
-    backSpeed: 50,
-	backDelay: 1500,
-});
-});
+///*------------------------------------
+//    Typed
+//-------------------------------------- */
+//$(".typed").each(function() {
+//var typed = new Typed('.typed', {
+//    stringsElement: '.typed-strings',
+//	loop: true,
+//	typeSpeed: 100,
+//    backSpeed: 50,
+//	backDelay: 1500,
+//});
+//});
 
-/*------------------------------------
-    YTPlayer YouTube Background
--------------------------------------- */
+///*------------------------------------
+//    YTPlayer YouTube Background
+//-------------------------------------- */
 
-$(".player").each(function () {
-    $(this).mb_YTPlayer();
-});
+//$(".player").each(function () {
+//    $(this).mb_YTPlayer();
+//});
 
 /*------------------------
    tooltips

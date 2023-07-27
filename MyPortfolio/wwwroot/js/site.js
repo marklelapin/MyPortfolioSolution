@@ -12,14 +12,13 @@ var currentProjectsFilter = "*"
 const projectsFilterMenu = document.querySelectorAll("[data-filter]");
 const projects = document.querySelectorAll(".project");
 
-//projectsFilterMenu.foreach(el => el.addEventListener("click", projectsFilterClick));
 
 $(window).on('load', function () {
 	$(".portfolio-menu").find("a").on("click", projectsFilterClick);
+	
 });
 
 function projectsFilterClick(event) {
-
 	event.preventDefault();
 	const element = event.currentTarget
 
@@ -28,7 +27,6 @@ function projectsFilterClick(event) {
 	updateFilterMenu()
 
 	updateProjectsFilter()
-
 }
 
 
@@ -43,10 +41,15 @@ function updateFilterMenu() {
 function updateProjectsFilter() {
 	projects.forEach(el => {
 		el.classList.remove("dimmed");
-		if (el.classList.contains(currentProjectsFilter) === false || currentProjectsFilter === "*") { el.classList.add("dimmed") };
+		if (el.classList.contains(currentProjectsFilter) === false && currentProjectsFilter != "*") { el.classList.add("dimmed") };
 	})
-
 }
+
+
+
+
+
+
 
 
 	

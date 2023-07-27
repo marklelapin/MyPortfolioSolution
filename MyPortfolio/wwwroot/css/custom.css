@@ -9,18 +9,35 @@
 
 /*=== Developer Icons ===*/
 
-.developer-icons{
+.developer-icons {
 	column-gap: 60px;
-	justify-content:center;
+	justify-content: center;
 
 }
 
+.container.developer-icons{
+	display: flex;
+	justify-content: center;
+}
+
+.container.developer-icons img{
+	height: 3em;
+}
+
+.portfolio-overlay-details .developer-icons {
+	position:absolute;
+	bottom: 0.5em;
+	margin: auto;
+}
 
 /*=== 5.5 Tabs ===*/
 
 
 img.code-icon{
 	height: 50px;
+	-webkit-filter: none !important;
+	filter: none !important;
+	
 }
 
 .portfolio-grid{

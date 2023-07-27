@@ -25,6 +25,8 @@
 </head>
 <body data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-offset="0">
 
+    <div id="popup-content"></div>
+
     <!-- Preloader -->
     <div class="preloader preloader-dark">
         <div class="lds-ellipsis">
@@ -39,7 +41,7 @@
     =============================== -->
     <div id="main-wrapper">
 
-        @await Html.PartialAsync("_Header");
+        @await Html.PartialAsync("_Header")
 
         <!-- Content
         ========================================================= -->
@@ -49,7 +51,7 @@
 
         </div>
     
-        @await Html.PartialAsync("_Footer");
+        @await Html.PartialAsync("_Footer")
 
     </div>
 

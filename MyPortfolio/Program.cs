@@ -1,7 +1,14 @@
+using Microsoft.AspNetCore.Mvc.Razor;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.Configure<RazorViewEngineOptions>(options =>
+{
+    options.PageViewLocationFormats.Add("/Pages/ProjectPartials/{0}" + RazorViewEngine.ViewExtension);
+});
 
 var app = builder.Build();
 

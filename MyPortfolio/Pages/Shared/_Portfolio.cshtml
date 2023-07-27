@@ -17,10 +17,7 @@
         </ul>
         <!-- Filter Menu end -->
 
-        <p>The Whadon Show App is several projects rolled into one demonstrating Data Access, Unit Testing, Api Monitoring, Business Logic and Front-End Skills. All of what you see is my own work.</p>
-
-
-        <div class="portfolio popup-ajax-gallery">
+       <div class="portfolio popup-ajax-gallery">
             <div class="portfolio-grid">
                 
                 <div id="whaddon-show" class="project portfolio-box rounded mywork">
@@ -32,12 +29,15 @@
                             <div>Show</div>
                         </div>                      
                         <div class="portfolio-overlay">
-                            <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-1.html"></a>
+                            <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-whaddon-show.html"></a>
                             <div class="portfolio-overlay-details">
                                 <h5 class="text-white fw-400">The Whaddon Show App</h5>
-                                <span class="text-light">Collaborative script writing, and management of The Whadon Show. (An annual variety show involving 40 people).</span>
+                                <span class="text-light">This is several projects rolled into one demonstrating Data Access, Unit Testing, Api Monitoring, Business Logic and Front-End Skills. All of what you see is my own work.</span>
+                                @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(new List<string>(){"html","css","javascript","gap","csharp","dotnet","gap","sql","mongo","gap","azure"}))
                             </div>
+                            
                         </div>
+                        
                     </div>
                 </div>
                 
@@ -55,6 +55,7 @@
                             <div class="portfolio-overlay-details">
                                 <h5 class="text-white fw-400">Esta</h5>
                                 <span class="text-light">A rota management and payroll application serving 1000+ staff providing 24/7 Care to people with Learning Disabilities.</span>y
+                                @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(new List<string>(){"csharp","gap","sql","gap","excel-vba"}))
                             </div>
                         </div>
                     </div>
@@ -73,6 +74,7 @@
                             <div class="portfolio-overlay-details">
                                 <h5 class="text-white fw-400">Hightown Workflow</h5>
                                 <span class="text-light">An integration of 13 internal and 3rd party applications into an in-house workflow monitoring solution adopted extensively across all departments.</span>y
+                                @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(new List<string>(){"csharp","gap","sql","gap","excel-vba"}))
                             </div>
                         </div>
                     </div>
@@ -92,6 +94,7 @@
                             <div class="portfolio-overlay-details">
                                 <h5 class="text-white fw-400">DevApp</h5>
                                 <span class="text-light">An in-house application producing tender appraisals and management information on development expenditure used to approve and monitor £xm of expenditure for the last xx years.</span>
+                                @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(new List<string>(){"csharp","gap","sql","gap","excel-vba"}))
                             </div>
                         </div>
                     </div>

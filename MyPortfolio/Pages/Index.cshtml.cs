@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyPortfolio.Pages.Shared;
 
 namespace MyPortfolio.Pages
@@ -14,9 +15,11 @@ namespace MyPortfolio.Pages
             _logger = logger;
         }
 
-        public void OnGet()
-        {
 
+        public PartialViewResult OnGetPopupContent(string viewName)
+        {
+            var output = Partial(viewName);
+            return output;
         }
     }
 }
