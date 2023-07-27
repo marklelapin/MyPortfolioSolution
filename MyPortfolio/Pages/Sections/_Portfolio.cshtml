@@ -1,107 +1,110 @@
-﻿@using MyPortfolio.Pages.Shared;
+﻿@using MyPortfolio.Pages.Models;
+@using MyPortfolio.Pages.Shared;
 <!-- Portfolio
             ============================================= -->
 <section id="portfolio" class="section bg-dark-2">
     <div class="container">
-        <!-- Heading -->
-        <div class="position-relative d-flex text-center mb-5">
-            <h2 class="text-24 text-white-50 opacity-1 text-uppercase fw-600 w-100 mb-0">Portfolio</h2>
-            <p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0">My Work<span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
-        </div>
-        <!-- Heading end-->
+        @await Html.PartialAsync("_SectionHeading", new _SectionHeadingModel("Portfolio","My Work"))
 
         <!-- Filter Menu -->
         <ul class="portfolio-menu nav nav-tabs justify-content-center border-bottom-0 mb-5">
             <li class="nav-item"> <a data-filter="*" class="nav-link active" href="">All</a></li>
-            <li class="nav-item"> <a data-filter="mywork" href="" class="nav-link">My Work</a></li>
-            <li class="nav-item"> <a data-filter="collaboration" href="" class="nav-link">Collaborations Led By Me</a></li>
+            <li class="nav-item"> <a data-filter="mywork" href="" class="nav-link">My Own Work Entirely</a></li>
+            <li class="nav-item"> <a data-filter="collaboration" href="" class="nav-link">Collaborations I Led and Worked On</a></li>
         </ul>
         <!-- Filter Menu end -->
 
        <div class="portfolio popup-ajax-gallery">
             <div class="portfolio-grid">
                 
-                <div id="whaddon-show" class="project portfolio-box rounded mywork">
-                    <div class="portfolio-img rounded">
-                        <img class="img-fluid d-block" src="images/projects/whaddon-show-app.png" portfolio-filter alt="">
-                        <div class ="text-white fw-600 project-title h3">
-                            <div>The</div>
-                            <div>Whaddon</div>
-                            <div>Show</div>
-                        </div>                      
-                        <div class="portfolio-overlay">
-                            <a class="popup-ajax stretched-link" href="?handler=PopupContent&viewName=_Project-WhaddonShow"></a>
-                            <div class="portfolio-overlay-details">
-                                <h5 class="text-white fw-400">The Whaddon Show App</h5>
-                                <span class="text-light">This is several projects rolled into one demonstrating Data Access, Unit Testing, Api Monitoring, Business Logic and Front-End Skills. All of what you see is my own work.</span>
-                                @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(new List<string>(){"html","css","javascript","gap","csharp","dotnet","gap","sql","mongo","gap","azure"}))
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-                
-          
-                <div id="care" class="project portfolio-box rounded collaboration">
-                    <div class="portfolio-img rounded">
-                        <img class="img-fluid d-block" src="images/projects/esta.png" alt="">
-                        <div class="text-white fw-600 project-title h3">
-                            <div>Solutions</div>
-                            <div>In</div>
-                            <div>Care</div>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-2.html"></a>
-                            <div class="portfolio-overlay-details">
-                                <h5 class="text-white fw-400">Esta</h5>
-                                <span class="text-light">A rota management and payroll application serving 1000+ staff providing 24/7 Care to people with Learning Disabilities.</span>y
-                                @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(new List<string>(){"csharp","gap","sql","gap","excel-vba"}))
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @await Html.PartialAsync("_PortfolioProject"
+                ,new _PortfolioProjectModel("whaddon-show"
+                ,new PortfolioProject(
+                "The Whaddon Show"
+                ,"images/projects/whaddon-show-app.png"
+                ,"4 amusing actors on stage in front of bright red curtain."
+                ,"mywork"
+                )
+                , new PortfolioProjectOverlay(
+                "The Whaddon Show App"
 
-                        
-                <div id="workflow" class="project portfolio-box rounded collaboration">
-                    <div class="portfolio-img rounded">
-                        <img class="img-fluid d-block" src="images/projects/workflow.png" alt="">
-                        <div class="text-white fw-600 project-title h3">
-                            <div>Workflow</div>
-                            <div>Solutions</div>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-2.html"></a>
-                            <div class="portfolio-overlay-details">
-                                <h5 class="text-white fw-400">Hightown Workflow</h5>
-                                <span class="text-light">An integration of 13 internal and 3rd party applications into an in-house workflow monitoring solution adopted extensively across all departments.</span>y
-                                @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(new List<string>(){"csharp","gap","sql","gap","excel-vba"}))
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                        
-                  
-                <div id="development" class="project portfolio-box rounded collaboration">
-                    <div class="portfolio-img rounded">
-                        <img class="img-fluid d-block" src="images/projects/devapp.png" alt="">
-                        <div class="text-white fw-600 project-title h3">
-                            <div>Solutions</div>
-                            <div>In</div>
-                            <div>Development</div>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-dark-3.html"></a>
-                            <div class="portfolio-overlay-details">
-                                <h5 class="text-white fw-400">DevApp</h5>
-                                <span class="text-light">An in-house application producing tender appraisals and management information on development expenditure used to approve and monitor £xm of expenditure for the last xx years.</span>
-                                @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(new List<string>(){"csharp","gap","sql","gap","excel-vba"}))
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    
+                ,new List<string>(){"A collaborative script writing and show management application."
+                ,"This represents 3 projects rolled into one demonstrating..."
+                ,"Data Access & Authentication"
+                ,"Api Documentation & Monitoring"
+                ,"Unit Testing"
+                ,"Business Logic & Front-End Development"}
 
+                ,new List<string>(){"html","css","javascript","gap","csharp","dotnet","gap","sql","mongo","gap","azure"}
+
+                ,                   "_Project-WhaddonShow"
+                )
+                )
+                )
+
+                @await Html.PartialAsync("_PortfolioProject"
+                ,new _PortfolioProjectModel("care"
+                ,new PortfolioProject( 
+                "Solutions in Care"
+                ,"images/projects/esta.png"
+                ,"Man with learning disability in wheelchair in front of bright yellow building."
+                ,"collaboration"
+                )
+                , new PortfolioProjectOverlay(
+                "Chester"
+
+                ,new List<string>(){"An automated rota management and payroll application serving 1000+ staff providing 24/7 Care to people with Learning Disabilities."
+                                ,"The app has been used for the last 10 years."}
+
+                ,new List<string>(){"csharp","gap","sql","gap","excel-vba"}
+
+                ,                   "_Project-Chester"
+                )
+                )
+                )
+
+
+                @await Html.PartialAsync("_PortfolioProject"
+                ,new _PortfolioProjectModel("workflow"
+                ,new PortfolioProject(
+                "Workflow Solutions"
+                ,"images/projects/workflow.png"
+                ,"Aerial photo of cars going around a roundabout surrounded by bright green grass."
+                ,"collaboration"
+                )
+                , new PortfolioProjectOverlay(
+                "Hightown Workflow"
+
+                ,new List<string>(){"An integration of 13 internal and 3rd party applications into a single in-house workflow monitoring solution."
+                ,"The application has been used extensively across all departments for last 7 years."}
+
+                ,new List<string>(){"csharp","gap","sql","gap","excel-vba"}
+
+                ,                   "_Project-HightownWorkflow"
+                )
+                )
+                )
+
+                @await Html.PartialAsync("_PortfolioProject"
+                ,new _PortfolioProjectModel("development"
+                ,new PortfolioProject(
+                "Solutions in Housing Development"
+                ,"images/projects/devapp.png"
+                ,"Looking up at a tall block of flats with two cranes pointing into a bright blue sky."
+                ,"collaboration"
+                )
+                , new PortfolioProjectOverlay(
+                "DevApp"
+
+                ,new List<string>(){"A tendering, project management and cashflow forecasting application for Housing Development."
+                ,"Used to approve and monitor over £1.2 billion of expenditure over the last 8 years."}
+
+                ,new List<string>(){"csharp","gap","sql","gap","excel-vba"}
+
+                ,                   "_Project-DevApp"
+                )
+                )
+                )
                
             </div>
         </div>

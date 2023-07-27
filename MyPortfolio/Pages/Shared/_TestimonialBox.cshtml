@@ -1,0 +1,13 @@
+﻿@using System.Text.RegularExpressions;
+@model MyPortfolio.Pages.Shared._TestimonialBoxModel
+@{
+}
+
+    <div class="bg-dark rounded p-5">
+        <div class="d-flex align-items-center mt-auto mb-4">
+            <img class="img-fluid rounded-circle d-inline-block w-auto" src="@Model.ImageSource" alt="Photo of @Regex.Match(Model.Name, @"^([w-]+)").">
+            <p class="ms-3 mb-0"><strong class="d-block text-white fw-600">@Model.Name</strong> <span class="text-white-50 fw-500">@Model.JobTitle</span></p>
+        </div>
+        <p class="text-light mb-4">“@Model.Quote”</p>
+        <span class="text-2"> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> </span>
+    </div>

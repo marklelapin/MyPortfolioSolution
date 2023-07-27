@@ -8,8 +8,11 @@
 
 
 
-/*=== Intro Icons ===*/
+/*=== Title Icons ===*/
 
+.d-flex{
+	margin-bottom: 0px !important;
+}
 
 /*=== Developer Icons ===*/
 

@@ -1,0 +1,29 @@
+﻿@model MyPortfolio.Pages.Shared._PortfolioProjectModel
+@{
+}
+<div id="@Model.HtmlId" class="project portfolio-box rounded @Model.Project.Filter">
+    <div class="portfolio-img rounded">
+        <img class="img-fluid d-block" src="@Model.Project.ImageSource" portfolio-filter alt="@Model.Project.ImageAlt">
+        <div class="text-white fw-600 project-title h3">
+            @{
+                foreach(string word in Model.Project.ProjectTitle.Split(' '))
+                {
+                    <div>@word</div>
+                }
+            }
+        </div>
+        <div class="portfolio-overlay">
+            <a class="popup-ajax stretched-link" href="?handler=PopupContent&viewName=@Model.ProjectOverlay.AjaxProjectPartial"></a>
+            <div class="portfolio-overlay-details">
+                <h5 class="text-white fw-400">@Model.ProjectOverlay.AppTitle</h5>
+                @foreach(var line in Model.ProjectOverlay.AppDescription)
+                {
+                    <p class="text-light">@line</p>
+                }
+                @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(Model.ProjectOverlay.DeveloperIcons));
+            </div>
+
+        </div>
+
+    </div>
+</div>

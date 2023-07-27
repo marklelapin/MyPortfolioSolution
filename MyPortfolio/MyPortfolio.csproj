@@ -4,6 +4,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>ddc92544-f8e2-4f7b-8e2d-70f4b2195291</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MyClassLibrarySolution\MyClassLibrary\MyClassLibrary.csproj" />
+  </ItemGroup>
 
 </Project>
