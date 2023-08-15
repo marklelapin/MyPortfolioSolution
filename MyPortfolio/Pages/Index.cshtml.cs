@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MyClassLibrary.Methods;
+using MyClassLibrary.Interfaces;
 using MyPortfolio.Pages.Models;
 
 namespace MyPortfolio.Pages
@@ -8,8 +8,7 @@ namespace MyPortfolio.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        private readonly IConfiguration _configuration;
-        private readonly EmailClient _emailClient;
+        private readonly IEmailClient _emailClient;
 
         [BindProperty]
         public Contact Contact { get; set; } = new Contact();
@@ -20,11 +19,10 @@ namespace MyPortfolio.Pages
 
         }
 
-        public IndexModel(ILogger<IndexModel> logger, IConfiguration configuration)
+        public IndexModel(ILogger<IndexModel> logger, IEmailClient emailClient)
         {
             _logger = logger;
-            _configuration = configuration;
-            _emailClient = new EmailClient(configuration); //TODO -add this into dependency injection.
+            _emailClient = emailClient;
         }
 
 
@@ -38,7 +36,7 @@ namespace MyPortfolio.Pages
 
         public async Task<ContentResult> OnPostSendMessage()
         {
-            var sendSuccess = await _emailClient.SendAsync($"{Contact.Email}", "magcarter@hotmail.co.uk", $"Portfolio Enquiry from {Contact.Name}", $"{Contact.Message}");
+            var sendSuccess = await _emailClient.SendAsync($"{Contact.Email}", "default", $"Portfolio Enquiry from {Contact.Name}", $"{Contact.Message}");
             string result;
 
             result = (sendSuccess == true) ? "Success" : "Failure";

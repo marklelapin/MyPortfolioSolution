@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Razor;
+using MyClassLibrary.Email;
+using MyClassLibrary.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,8 @@ builder.Services.Configure<RazorViewEngineOptions>(options =>
     options.PageViewLocationFormats.Add("/Pages/Projects/{0}" + RazorViewEngine.ViewExtension);
     options.PageViewLocationFormats.Add("/Pages/Sections/{0}" + RazorViewEngine.ViewExtension);
 });
+
+builder.Services.AddTransient<IEmailClient, HotmailClient>();
 
 var app = builder.Build();
 
