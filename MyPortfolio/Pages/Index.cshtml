@@ -1,4 +1,5 @@
 ﻿@page
+@using MyPortfolio.Pages.Shared;
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -14,4 +15,4 @@
 
 @await Html.PartialAsync("_Testimonials")
 
-@await Html.PartialAsync("_Contact",Model.ContactModel)
+@await Html.PartialAsync("_Contact",Model.Contact)  

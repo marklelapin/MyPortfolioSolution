@@ -1,0 +1,23 @@
+﻿
+@model MyPortfolio.Pages.Shared._ModalSimpleModel
+@{
+    var idSuffix = Model.Title.Replace(" ", "-").ToLower();
+}
+<!-- Modal -->
+
+<div class="modal fade" id="modal-@Model.Id" tabindex="-1" aria-labelledby="modal-label-@Model.Id" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modal-label-@Model.Id">@Model.Title</h1>
+                @*<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>*@
+            </div>
+            <div class="modal-body" id="modal-body-@Model.Id">
+                 @Model.Message
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-@Model.ButtonType" id="modal-button-@Model.Id" data-bs-dismiss="modal" aria-label="@Model.ButtonText" style="display: none">@Model.ButtonText</button>
+            </div>
+        </div>
+    </div>
+</div>
