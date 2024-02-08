@@ -8,11 +8,11 @@
     <div class="row developer-icons">
         @foreach(var iconGroup in Model.GroupedIcons)
         {
-            <div class="col-auto">
+            <div class="col-auto ">
                 
                 @foreach(string icon in iconGroup)
                 {
-                    <img class="code-icon" src= @($"images/icons/{@icon}.png") alt=@($"{icon} icon.png") />
+                    <img class="code-icon mt-3" src= @($"images/icons/{@icon}.png") alt=@($"{icon} icon.png") />
                 }
                           
             </div>
