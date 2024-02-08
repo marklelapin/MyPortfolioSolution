@@ -3299,25 +3299,34 @@ select.form-control:not([size]):not([multiple]):not(.form-control-sm) {
   }
 }
 
-.bg-primary {
+/*.bg-primary {
   background-color: #20c997 !important;
 }
 
 .bg-secondary {
   background-color: #6c757d !important;
-}
+}*/
 
-.text-primary, .btn-light, .btn-outline-light:hover, .btn-link, .btn-outline-light:not(:disabled):not(.disabled).active, .btn-outline-light:not(:disabled):not(.disabled):active {
+/*.text-primary,
+.btn-light,
+.btn-outline-light:hover,
+.btn-link,
+.btn-outline-light:not(:disabled):not(.disabled).active,
+.btn-outline-light:not(:disabled):not(.disabled):active {
   color: #20c997 !important;
-}
+}*/
+
+
+
+
 
 .btn-link:hover {
   color: #1baa80 !important;
 }
 
-.text-secondary {
+/*.text-secondary {
   color: #6c757d !important;
-}
+}*/
 
 .text-light {
   color: #dee3e4 !important;

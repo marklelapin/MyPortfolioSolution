@@ -6,103 +6,218 @@
 -----------------------------------------------------------------*/
 
 
+.green {
+    color: rgb(133,160,50);
+}
+
+.red {
+    color: rgb(231,2,35);
+}
+
+.blue {
+    color: rgb(53,120,178);
+}
+
+.yellow {
+    color: rgb(227,174,27);
+}
+
+.bg-green {
+    background-color: rgb(133,160,50);
+}
+
+.bg-red {
+    background-color: rgb(231,2,35);
+}
+
+.bg-blue {
+    background-color: rgb(53,120,178);
+}
+
+.bg-yellow {
+    background-color: rgb(227,174,27);
+}
+
 
 
 /*=== Title Icons ===*/
 
-.d-flex{
-	margin-bottom: 0px !important;
+.d-flex {
+    margin-bottom: 0px !important;
 }
 
 /*=== Developer Icons ===*/
 
-#home .developer-icons{
-	margin-top: 2em;
-	margin-bottom:2em
+#home .developer-icons {
+    margin-top: 2em;
+    margin-bottom: 2em
 }
+
 .developer-icons {
-	column-gap: 60px;
-	justify-content: center;
-
+    column-gap: 60px;
+    justify-content: center;
 }
 
-.container.developer-icons{
-	display: flex;
-	justify-content: center;
+.container.developer-icons {
+    display: flex;
+    justify-content: center;
 }
 
-.container.developer-icons img{
-	height: 3em;
-}
+    .container.developer-icons img {
+        height: 3em;
+    }
 
 .portfolio-overlay-details .developer-icons {
-	position:absolute;
-	bottom: 0.5em;
-	margin: auto;
+    position: absolute;
+    bottom: 0.5em;
+    margin: auto;
 }
 
-.project-list-indent{
-	padding-left: 6em;
+.project-list-indent {
+    padding-left: 6em;
 }
 
 /*=== 5.5 Tabs ===*/
 
 
 
-img.code-icon{
-	height: 50px;
-	-webkit-filter: none !important;
-	filter: none !important;
-	
-}
-
-.portfolio-grid{
-	display: grid;
-	grid-template-rows: 1fr max-content;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-areas: 
-		'whaddonshow whaddonshow development'
-		'care workflow development';
-	grid-gap: 1em;
-	align-content: stretch;
-}
-
-.project{
-	object-fit: contain;
-}
-
-.project-title{
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	padding: 0.5em;
-	text-align: right;
-	background: radial-gradient(at 100% 20%, rgba(0,0,0,0.5), 50%, transparent,90%, transparent 100%);
-	font-size: 1em;
-
-}
-
-.dimmed img{
-
-	filter: grayscale(100%) brightness(50%);
-
+img.code-icon {
+    height: 50px;
+    -webkit-filter: none !important;
+    filter: none !important;
 }
 
 
+.portfolio {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(3,max-content);
+    grid-template-areas:
+        'whaddonshow whaddonshow development'
+        'care workflow development';
+    grid-gap: 20px;
+}
+
+@media (max-width: 1220px) {
+    .portfolio-grid {
+        grid-template-rows: repeat(3,max-content);
+        grid-template-columns: repeat(2,auto);
+        grid-template-areas:
+            'whaddonshow whaddonshow'
+            'care development'
+            'workflow development'
+    }
+}
+
+@media (max-width: 920px) {
+    .portfolio-grid {
+        grid-template-rows: repeat(4,max-content);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'whaddonshow'
+            'care'
+            'workflow'
+            'development'
+    }
+}
+
+.project {
+    object-fit: contain;
+}
+
+.project-title {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0.5em;
+    text-align: right;
+    background: radial-gradient(at 100% 20%, rgba(0,0,0,0.5), 50%, transparent,90%, transparent 100%);
+    font-size: 1em;
+}
+
+.dimmed img {
+    filter: grayscale(100%) brightness(50%);
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 100%;
+}
+
+    .portfolio-img img {
+        width: 100%;
+        height: 100%;
+    }
 
 
 #whaddon-show {
-	grid-area: whaddonshow;
+    width: 740px;
+    height: 430px;
+    grid-area: whaddonshow;
+    overflow:hidden;
+}
+
+@media (max-width: 920px) {
+    #whaddon-show {
+        width: 100%;
+        height: auto;
+    }
+
+    #whaddon-show img {
+        width:740px;
+        height:430px;
+    }
 }
 
 #care {
-	grid-area: care;
+    width: 360px;
+    height: 270px;
+    
+    grid-area: care;
+}
+@media (max-width: 920px) {
+    #care {
+        width: 100%;
+        height: auto;
+    }
 }
 
 #development {
-	grid-area: development;
+    width: 360px;
+    height: 720px;
+    grid-area: development;
 }
 
-#workflow{
-	grid-area: workflow;
+@media (max-width: 1220px) {
+    #development {
+        width: 360px;
+        height: 560px;
+    }
+}
+
+@media(max-width: 920px) {
+    #development {
+        width: 100%;
+        height: auto;
+    }
+}
+
+#workflow {
+    width: 360px;
+    height: 270px;
+    grid-area: workflow;
+}
+
+@media (max-width: 920px) {
+    #workflow {
+        width: 100%;
+        height: auto;
+    }
 }

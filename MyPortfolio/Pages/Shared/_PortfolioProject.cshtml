@@ -3,7 +3,7 @@
 }
 <div id="@Model.HtmlId" class="project portfolio-box rounded @Model.Project.Filter">
     <div class="portfolio-img rounded">
-        <img class="img-fluid d-block" src="@Model.Project.ImageSource" portfolio-filter alt="@Model.Project.ImageAlt">
+        <img class=" d-block" src="@Model.Project.ImageSource" portfolio-filter alt="@Model.Project.ImageAlt">
         <div class="text-white fw-600 project-title h3">
             @{
                 foreach(string word in Model.Project.ProjectTitle.Split(' '))
