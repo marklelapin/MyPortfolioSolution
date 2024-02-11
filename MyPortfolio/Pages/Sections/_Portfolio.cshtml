@@ -2,15 +2,15 @@
 @using MyPortfolio.Pages.Shared;
 <!-- Portfolio
             ============================================= -->
-<section id="portfolio" class="section bg-dark-2">
+<section id="portfolio" class="section bg-dark">
     <div class="container">
-        @await Html.PartialAsync("_SectionHeading", new _SectionHeadingModel("Portfolio","My Work"))
+        @await Html.PartialAsync("_SectionHeading", new _SectionHeadingModel("Portfolio","My Work","blue","dark"))
 
         <!-- Filter Menu -->
-        <ul class="portfolio-menu nav nav-tabs justify-content-center border-bottom-0 mb-5">
-            <li class="nav-item"> <a data-filter="*" class="nav-link active" href="">All</a></li>
-            <li class="nav-item"> <a data-filter="mywork" href="" class="nav-link">My Own Work</a></li>
-            <li class="nav-item"> <a data-filter="collaboration" href="" class="nav-link">Collaborations I Led</a></li>
+        <ul class="portfolio-menu nav nav-tabs blue justify-content-center border-bottom-0 mb-5">
+            <li class="nav-item"> <a data-filter="*" class="nav-link active blue" href="">All</a></li>
+            <li class="nav-item"> <a data-filter="mywork" href="" class="nav-link blue">My Own Work</a></li>
+            <li class="nav-item"> <a data-filter="collaboration" href="" class="nav-link blue">Collaborations I Led</a></li>
         </ul>
         <!-- Filter Menu end -->
 
@@ -34,10 +34,9 @@
                 ,"Api Documentation & Monitoring"
                 ,"Unit Testing"
                 ,"Business Logic & Front-End Development"}
-
                 ,new List<string>(){"html","css","javascript","gap","csharp","dotnet","gap","sql","mongo","gap","azure"}
 
-                ,                   "_Project-WhaddonShow"
+                ,"_Project-WhaddonShow"
                 )
                 )
                 )
@@ -52,13 +51,10 @@
                 )
                 , new PortfolioProjectOverlay(
                 "Chester"
-
                 ,new List<string>(){"An automated rota management and payroll application serving 1000+ staff providing 24/7 Care to people with Learning Disabilities."
                                 ,"The app has been used for the last 10 years."}
-
                 ,new List<string>(){"csharp","gap","sql","gap","excel-vba"}
-
-                ,                   "_Project-Chester"
+                ,"_Project-Chester"
                 )
                 )
                 )
@@ -80,7 +76,7 @@
 
                 ,new List<string>(){"csharp","gap","sql","gap","excel-vba"}
 
-                ,                   "_Project-HightownWorkflow"
+                ,"_Project-HightownWorkflow"
                 )
                 )
                 )
@@ -101,7 +97,7 @@
 
                 ,new List<string>(){"csharp","gap","sql","gap","excel-vba"}
 
-                ,                   "_Project-DevApp"
+                ,"_Project-DevApp"
                 )
                 )
                 )

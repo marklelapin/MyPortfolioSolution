@@ -7,38 +7,65 @@
 
 
 .green {
-    color: rgb(133,160,50);
+    color: rgb(133,160,50) !important; /*important required to overwrite bootstrap*/
+    border-color: rgb(133,160,50) !important; /*important required to overwrite bootstrap*/
 }
 
 .red {
-    color: rgb(231,2,35);
+    color: rgb(231,2,35) !important; /*important required to overwrite bootstrap*/
+    border-color: rgb(231,2,35) !important; /*important required to overwrite bootstrap*/
 }
 
 .blue {
-    color: rgb(53,120,178);
+    color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
+    border-color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
 }
 
 .yellow {
-    color: rgb(227,174,27);
+    color: rgb(227,174,27) !important; /*important required to overwrite bootstrap*/
+    border-color: rgb(227,174,27) !important; /*important required to overwrite bootstrap*/
 }
 
 .bg-green {
-    background-color: rgb(133,160,50);
+    background-color: rgb(133,160,50) !important; /*important required to overwrite bootstrap*/
 }
 
 .bg-red {
-    background-color: rgb(231,2,35);
+    background-color: rgb(231,2,35) !important; /*important required to overwrite bootstrap*/
 }
 
 .bg-blue {
-    background-color: rgb(53,120,178);
+    background-color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
 }
 
 .bg-yellow {
-    background-color: rgb(227,174,27);
+    background-color: rgb(227,174,27) !important; /*important required to overwrite bootstrap*/
+}
+
+.btn-outline:not(:hover) {
+    background-color: transparent !important; /*important required to overwrite bootstrap*/
+}
+
+    .btn-outline:hover {
+        color: white;
+
+    }
+
+
+
+.bg-dark {
+    background-color: rgb(20,32,41) !important; /*important required to overwrite bootstrap*/
 }
 
 
+
+.nav-link.blue.active {
+color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
+
+}
+a.nav-link.blue.active::after {
+    background-color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
+}
 
 /*=== Title Icons ===*/
 
@@ -49,8 +76,8 @@
 /*=== Developer Icons ===*/
 
 #home .developer-icons {
-    margin-top: 2em;
-    margin-bottom: 2em
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .developer-icons {
