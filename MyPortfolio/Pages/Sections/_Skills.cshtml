@@ -4,21 +4,21 @@
 <section id="skills" class="section bg-light-1">
     <div class="container">
 
-        @await Html.PartialAsync("_SectionHeading",new _SectionHeadingModel("Skills","What I do.","red","light"))
+        @await Html.PartialAsync("_SectionHeading",new _SectionHeadingModel("Skills","What I do.","blue","light"))
         
         <div class="row">
             <div class="col-lg-11 mx-auto">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-7 mx-auto">
                        @await Html.PartialAsync("_SkillBox",new _SkillBoxModel("people-arrows","I talk to people","to understand what they want."))
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-7 mx-auto">
                        @await Html.PartialAsync("_SkillBox",new _SkillBoxModel("file-code","I look at existing systems and data","to understand how they work."))
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-7 mx-auto">
                        @await Html.PartialAsync("_SkillBox",new _SkillBoxModel("laptop-code","I design new applications or improve existing ones","to solve problems efficiently and effectively."))
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-7 mx-auto">
                        @await Html.PartialAsync("_SkillBox",new _SkillBoxModel("keyboard","I code","using recognised coding patterns, unit testing and monitoring."))
                     </div>
                     

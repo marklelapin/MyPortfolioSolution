@@ -1,29 +1,33 @@
 ﻿@model MyPortfolio.Pages.Shared._PortfolioProjectModel
 @{
 }
-<div id="@Model.HtmlId" class="project portfolio-box rounded @Model.Project.Filter">
-    <div class="portfolio-img rounded">
-        <img class=" d-block" src="@Model.Project.ImageSource" portfolio-filter alt="@Model.Project.ImageAlt">
+<div id="@Model.HtmlId" class="project project-box rounded @Model.Project.Filter">
+    <div class="project-image-container rounded">
+        <img class="d-block project-img" src="@Model.Project.ImageSource" portfolio-filter alt="@Model.Project.ImageAlt">
         <div class="text-white fw-600 project-title h3">
             @{
-                foreach(string word in Model.Project.ProjectTitle.Split(' '))
+                foreach (string word in Model.Project.ProjectTitle.Split(' '))
                 {
                     <div>@word</div>
                 }
             }
         </div>
-        <div class="portfolio-overlay">
-            <a class="popup-ajax stretched-link" href="?handler=PopupContent&viewName=@Model.ProjectOverlay.AjaxProjectPartial"></a>
-            <div class="portfolio-overlay-details">
-                <h5 class="text-white fw-400">@Model.ProjectOverlay.AppTitle</h5>
-                @foreach(var line in Model.ProjectOverlay.AppDescription)
-                {
-                    <p class="text-light">@line</p>
-                }
-                @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(Model.ProjectOverlay.DeveloperIcons));
-            </div>
+        <div class="project-overlay clickable @Model.OpenModalOnClick()">
+
+            <a class="stretched-link" href="@Model.Link" target="_blank" title="@Model.Link">
+                <div class="project-overlay-details">
+                    <h5 class="text-white fw-400">@Model.ProjectOverlay.AppTitle</h5>
+                    @foreach (var line in Model.ProjectOverlay.AppDescription)
+                    {
+                        <p class="text-light">@line</p>
+                    }
+                    @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(Model.ProjectOverlay.DeveloperIcons))
+
+                </div>
+            </a>
 
         </div>
 
     </div>
+
 </div>

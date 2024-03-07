@@ -46,10 +46,9 @@
     background-color: transparent !important; /*important required to overwrite bootstrap*/
 }
 
-    .btn-outline:hover {
-        color: white;
-
-    }
+.btn-outline:hover {
+    color: white;
+}
 
 
 
@@ -60,9 +59,9 @@
 
 
 .nav-link.blue.active {
-color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
-
+    color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
 }
+
 a.nav-link.blue.active::after {
     background-color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
 }
@@ -73,49 +72,49 @@ a.nav-link.blue.active::after {
     margin-bottom: 0px !important;
 }
 
-/*=== Developer Icons ===*/
 
-#home .developer-icons {
+
+/*=== Developer Icons ===*/
+.developer-icons-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    row-gap: 20px;
+}
+
+.devloper-icon-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+img.developer-icon {
+    height: 3em !important;
+}
+
+#home .developer-icons-container {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.developer-icons {
-    column-gap: 60px;
-    justify-content: center;
-}
 
-.container.developer-icons {
-    display: flex;
-    justify-content: center;
-}
 
-    .container.developer-icons img {
-        height: 3em;
-    }
 
-.portfolio-overlay-details .developer-icons {
-    position: absolute;
-    bottom: 0.5em;
-    margin: auto;
-}
 
 .project-list-indent {
     padding-left: 6em;
 }
 
-/*=== 5.5 Tabs ===*/
 
-
-
-img.code-icon {
-    height: 50px;
-    -webkit-filter: none !important;
-    filter: none !important;
-}
-
+/*=== Portfolio ===*/
 
 .portfolio {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -123,6 +122,8 @@ img.code-icon {
 }
 
 .portfolio-grid {
+    position: relative;
+    z-index: 0;
     display: grid;
     grid-template-rows: repeat(2, auto);
     grid-template-columns: repeat(3,max-content);
@@ -173,22 +174,22 @@ img.code-icon {
     filter: grayscale(100%) brightness(50%);
 }
 
-.portfolio-img {
+.project-img {
     width: 100%;
     height: 100%;
 }
 
-    .portfolio-img img {
-        width: 100%;
-        height: 100%;
+@media not all and (pointer: fine) {
+    .project-overlay{
+        visibility: hidden;
     }
-
+}
 
 #whaddon-show {
     width: 740px;
     height: 430px;
     grid-area: whaddonshow;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 @media (max-width: 920px) {
@@ -197,18 +198,20 @@ img.code-icon {
         height: auto;
     }
 
-    #whaddon-show img {
-        width:740px;
-        height:430px;
-    }
+        #whaddon-show > img {
+            width: 740px;
+            height: 430px;
+        }
 }
 
 #care {
     width: 360px;
     height: 270px;
-    
     grid-area: care;
+    overflow: hidden;
+    min-height: 270px;
 }
+
 @media (max-width: 920px) {
     #care {
         width: 100%;
@@ -220,6 +223,7 @@ img.code-icon {
     width: 360px;
     height: 720px;
     grid-area: development;
+    overflow: hidden;
 }
 
 @media (max-width: 1220px) {
@@ -240,6 +244,8 @@ img.code-icon {
     width: 360px;
     height: 270px;
     grid-area: workflow;
+    overflow: hidden;
+    min-height: 270px;
 }
 
 @media (max-width: 920px) {
@@ -248,3 +254,153 @@ img.code-icon {
         height: auto;
     }
 }
+
+
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+}
+
+.featured-box-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+
+
+
+
+#portfolio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 2s;
+    overflow: auto;
+}
+
+    #portfolio-modal.closed {
+        display: none;
+        transition: background-color 2s;
+    }
+
+
+.project-detail-container {
+    display: none;
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    padding: 10px;
+    background-color: white;
+    margin-top: 80px;
+}
+
+    .project-detail-container.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+.project-detail-title {
+    flex: auto;
+}
+
+.project-detail-content {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    overflow:auto;
+}
+
+    .project-detail-content img {
+        flex: auto;
+    }
+
+
+.stretched-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-detail-box {
+    border-color: gainsboro;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px 0px gray;
+    background-color: white;
+}
+
+.project-detail-description {
+    flex: 1;
+    padding: 10px;
+    min-width: 310px;
+    max-width: 500px;
+}
+
+    .project-detail-description p {
+    }
+
+
+.close-modal-on-click {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#devapp-board-report {
+    width: 300px;
+    height: 450px;
+}
+
+#devapp-summary {
+    width: 300px;
+    height: 450px;
+}
+
+#chester-rota {
+    width: 300px;
+    height: 400px;
+}
+
+#chester-dashboard {
+    width: 300px;
+    height: 250px;
+}
+
+
+#workflow-snapshots{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+#workflow-dashboard {
+    width: 350px;
+    height: 250px;
+}
+
+#workflow-diagram-tool {
+    width: 350px;
+    height: 250px;
+}
+

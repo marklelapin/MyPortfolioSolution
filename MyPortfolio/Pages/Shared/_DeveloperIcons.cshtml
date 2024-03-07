@@ -3,20 +3,19 @@
 @{
 }
 
-<div class="container developer-icons">
 
-    <div class="row developer-icons">
+
+    <div class="developer-icons-container">
         @foreach(var iconGroup in Model.GroupedIcons)
         {
-            <div class="col-auto ">
+            <div class="developer-icon-group">
                 
                 @foreach(string icon in iconGroup)
                 {
-                    <img class="code-icon mt-3" src= @($"images/icons/{@icon}.png") alt=@($"{icon} icon.png") />
+                    <img class="developer-icon" src= @($"images/icons/{@icon}.png") alt=@($"{icon} icon.png") />
                 }
                           
             </div>
         }
     </div>
 
-</div>
