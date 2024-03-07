@@ -3,15 +3,14 @@
 
 // Write your JavaScript code
 
-/*------------------------------------
-    My Portfolio Filter
--------------------------------------- */
 
+'use strict';
 
 var currentProjectsFilter = "*"
 const projectsFilterMenu = document.querySelectorAll("[data-filter]");
 const projects = document.querySelectorAll(".project");
 
+const mouseExists = false// matchMedia('(pointer:fine)').matches;
 
 //Contact Form Ajax
 document.forms[0].onsubmit = (event) => { //TODO - as part of making the contact form a 'component' refer specifically to contact form not just form[0] 
@@ -54,6 +53,12 @@ function resetContactForm() {
 }
 
 
+
+/*------------------------------------
+    My Portfolio Filter
+-------------------------------------- */
+
+
 $(window).on('load', function () {
     $(".portfolio-menu").find("a").on("click", projectsFilterClick);
 
@@ -92,25 +97,70 @@ function updateProjectsFilter() {
     My Project Modal
 -------------------------------------- */
 
-//add click event listener to each project
-document.querySelectorAll(".open-modal-on-click").forEach(element => element.addEventListener("click", (e) => openProjectModal(e, element)));
+document.querySelectorAll(".project-box").forEach(element => element.addEventListener("click", (event) => handleProjectBoxClick(event, element)));
 document.querySelectorAll(".close-modal-on-click").forEach(element => element.addEventListener("click", (e) => closeProjectModals(e)));
+if (mouseExists === false) {
+    document.querySelectorAll(".action-link").forEach(element => {
+        element.classList.add("show");
+        element.addEventListener("click", (event) => handleActionLink(event, element));
+    });
+}
+
+
+function handleProjectBoxClick(event, projectBox) {
+
+    if (mouseExists) {
+        if (projectBox.classList.contains("open-modal-on-click")) openProjectModal(event, projectBox);
+        return;
+    }
+    //mouseDoesNotExist
+    toggleTouched(projectBox);
+}
+
+function toggleTouched(projectBox) {
+    if (projectBox.classList.contains("touched")) {
+        projectBox.classList.remove("touched")
+    } else {
+        projectBox.classList.add("touched")
+    }
+
+    document.querySelectorAll(".project-box").forEach(element => {
+        if (element !== projectBox) { element.classList.remove("touched") }
+    });
+}
+
+
+function handleActionLink(event, element) {
+
+    
+    const link = element.getAttribute("data-link");
+    if (link === "project-details") {
+        const projectBox = element.closest(".project-box");
+        console.log('actionlink project-details',projectBox)
+        openProjectModal(event, projectBox);
+     
+    } else {
+        window.open(link, "_blank");
+    }
+}
+
+
 
 function openProjectModal(event, projectOverlay) {
-    event.preventDefault();
-    event.stopPropagation();
+
+    //go straight to modal
     document.getElementById("portfolio-modal").classList.remove("closed");
-
-
     const projectId = projectOverlay.closest(".project").getAttribute("id");
     const projectDetail = document.getElementById("project-detail-" + projectId);
     projectDetail.classList.add("show");
+
 }
 
 function closeProjectModals(event) {
     event.preventDefault();
     document.getElementById("portfolio-modal").classList.add("closed");
     document.querySelectorAll(".project-detail-container").forEach(projectDetail => projectDetail.classList.remove("show"));
+
 }
 
 

@@ -179,11 +179,26 @@ img.developer-icon {
     height: 100%;
 }
 
-@media not all and (pointer: fine) {
+.action-link {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: white;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.touched .action-link.show {
+    display:block;
+}
+
+
+/*@media not all and (pointer: fine) {
     .project-overlay{
         visibility: hidden;
     }
-}
+}*/
 
 #whaddon-show {
     width: 740px;
@@ -322,7 +337,7 @@ img.developer-icon {
     gap: 10px;
     justify-content: center;
     align-items: flex-start;
-    overflow:auto;
+    overflow: auto;
 }
 
     .project-detail-content img {
@@ -387,9 +402,9 @@ img.developer-icon {
 }
 
 
-#workflow-snapshots{
-    display:flex;
-    flex-direction:column;
+#workflow-snapshots {
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
     gap: 10px;
 }
@@ -403,4 +418,3 @@ img.developer-icon {
     width: 350px;
     height: 250px;
 }
-

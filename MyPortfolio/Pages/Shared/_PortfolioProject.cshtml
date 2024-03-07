@@ -1,7 +1,7 @@
 ﻿@model MyPortfolio.Pages.Shared._PortfolioProjectModel
 @{
 }
-<div id="@Model.HtmlId" class="project project-box rounded @Model.Project.Filter">
+<div id="@Model.HtmlId" class="project project-box rounded @Model.Project.Filter @Model.OpenModalOnClick()">
     <div class="project-image-container rounded">
         <img class="d-block project-img" src="@Model.Project.ImageSource" portfolio-filter alt="@Model.Project.ImageAlt">
         <div class="text-white fw-600 project-title h3">
@@ -12,7 +12,7 @@
                 }
             }
         </div>
-        <div class="project-overlay clickable @Model.OpenModalOnClick()">
+        <div class="project-overlay clickable ">
 
             <a class="stretched-link" href="@Model.Link" target="_blank" title="@Model.Link">
                 <div class="project-overlay-details">
@@ -25,9 +25,15 @@
 
                 </div>
             </a>
+           
 
         </div>
 
     </div>
-
+    @* @if (Model.ActionLink != null)
+    { *@
+    <div class="action-link" data-link="project-details">
+        more...
+    </div>
+    @*  } *@
 </div>
