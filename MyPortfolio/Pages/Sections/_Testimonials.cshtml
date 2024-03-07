@@ -1,33 +1,30 @@
 ﻿@using MyPortfolio.Pages.Shared;
 <!-- Testimonial
             ============================================= -->
-<section id="testimonial" class="section bg-dark-1">
+<section id="testimonials" class="section bg-dark">
     <div class="container">
-        @await Html.PartialAsync("_SectionHeading",new _SectionHeadingModel("Testimonial","What people have to say about me."))
+        @await Html.PartialAsync("_SectionHeading",new _SectionHeadingModel("Testimonial","What people have to say about me.","blue","dark"))
         @*<div class="owl-carousel owl-light owl-theme" data-loop="true" data-nav="false" data-autoplay="false" data-margin="25" data-stagepadding="0" data-slideby="1" data-items-xs="1" data-items-sm="1" data-items-md="1" data-items-lg="3">*@
          <div class="container d-flex justify-content-md-center align-items-tretch">
             s
              <div class="row row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 g-3">
 
-                @await Html.PartialAsync("_TestimonialBox",new _TestimonialBoxModel("Andrew Royall"
-                ,"Director of Development, Hightown"
-                ,"Despite difficult beginnings Marks applications have stood the test of time."
-                ,"images/testimonial/client-sm-1.jpg"))
-
                 @await Html.PartialAsync("_TestimonialBox",new _TestimonialBoxModel("Sarah Salter"
                 ,"Director of IT and Corporate Services (Retired), Hightown"
-                ,"The applications that marked designed and led at Hightown made a long lasting difference to the organisations efficiency."
-                ,"images/testimonial/client-sm-2.jpg"))
+                ,"The applications that marked designed and led at Hightown made a long lasting difference to the organisation's efficiency and ability to grow."
+                ,"images/sarah.png"
+                ))
 
                 @await Html.PartialAsync("_TestimonialBox",new _TestimonialBoxModel("Jack Daniels"
-                ,"Senior Software Developer, Wherever"
-                ,"I worked with Mark for 5 years. He was great to work with and had a really deep understanding of data and systems and across an organisation."
-                ,"images/testimonial/client-sm-3.jpg"))
+                ,"Senior Data Platform Engineer, Syrenis Ltd"
+                ,"I worked with Mark for 5 years. He was great to work with and had a really deep understanding of data and systems across an organisation."
+                ,"images/jack.png"
+                ))
 
-                @await Html.PartialAsync("_TestimonialBox",new _TestimonialBoxModel("Mick Howells"
-                ,"Head of Asset Management, Wherever"
-                ,"Mark really knows how to get IT working."
-                ,"images/testimonial/client-sm-3.jpg"))
+                @await Html.PartialAsync("_TestimonialBox",new _TestimonialBoxModel("Steve Petty"
+                ,"Facilities Manager, Acorn Early Years"
+                ,"Mark created a number of software tools that I have had to maintain. The structure, annotation and great use of modules within the code has made support easy to complete and easy to understand. Mark is a great developer."
+                ,"images/steve.png"))
 
              </div>
 
