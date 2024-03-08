@@ -10,7 +10,7 @@ var currentProjectsFilter = "*"
 const projectsFilterMenu = document.querySelectorAll("[data-filter]");
 const projects = document.querySelectorAll(".project");
 
-const mouseExists = false// matchMedia('(pointer:fine)').matches;
+const mouseExists = matchMedia('(pointer:fine)').matches;
 
 //Contact Form Ajax
 document.forms[0].onsubmit = (event) => { //TODO - as part of making the contact form a 'component' refer specifically to contact form not just form[0] 
@@ -79,7 +79,7 @@ function projectsFilterClick(event) {
 function updateFilterMenu() {
     projectsFilterMenu.forEach(el => {
         el.classList.remove("active");
-        dataFilter = el.getAttribute("data-filter")
+        const dataFilter = el.getAttribute("data-filter")
         if (dataFilter === currentProjectsFilter) { el.classList.add("active") }
     })
 }
@@ -97,11 +97,23 @@ function updateProjectsFilter() {
     My Project Modal
 -------------------------------------- */
 
-document.querySelectorAll(".project-box").forEach(element => element.addEventListener("click", (event) => handleProjectBoxClick(event, element)));
-document.querySelectorAll(".close-modal-on-click").forEach(element => element.addEventListener("click", (e) => closeProjectModals(e)));
+document.querySelectorAll(".project-box").forEach(element => {
+    if (element.classList.contains("open-modal-on-click")) element.classList.add("clickable");
+    element.addEventListener("click", (event) => handleProjectBoxClick(event, element));
+});
+document.querySelectorAll(".close-modal-on-click").forEach(element => {
+    element.classList.add("clickable");
+    element.addEventListener("click", (e) => closeProjectModals(e))
+});
+
 if (mouseExists === false) {
-    document.querySelectorAll(".action-link").forEach(element => {
-        element.classList.add("show");
+    document.querySelectorAll(".see-more-link").forEach(element => {
+        element.classList.add("show", "clickable");
+        element.addEventListener("click", (event) => handleActionLink(event, element));
+
+    });
+    document.querySelectorAll(".see-it-in-action-link").forEach(element => {
+        element.classList.add("clickable");
         element.addEventListener("click", (event) => handleActionLink(event, element));
     });
 }
@@ -132,14 +144,13 @@ function toggleTouched(projectBox) {
 
 function handleActionLink(event, element) {
 
-    
     const link = element.getAttribute("data-link");
     if (link === "project-details") {
         const projectBox = element.closest(".project-box");
-        console.log('actionlink project-details',projectBox)
         openProjectModal(event, projectBox);
-     
+
     } else {
+        console.log('opening link' + link)
         window.open(link, "_blank");
     }
 }

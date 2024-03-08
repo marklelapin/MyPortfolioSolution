@@ -2663,42 +2663,70 @@ html[dir="rtl"] .nav.nav-separator .nav-item + .nav-item .nav-link:after {
         z-index: 2;
     }
 
-    .portfolio .project-box:hover .project-overlay {
+@media (pointer: fine) {
+    .project-box:hover .project-overlay {
         opacity: 1;
     }
 
-    .portfolio .project-box.touched .project-overlay {
+    .project-box:hover .project-img {
+        -webkit-filter: blur(2px);
+        filter: blur(2px) ;
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+    }
+
+    .project-box.dimmed:hover .project-img {
+        -webkit-filter: blur(2px);
+        filter: blur(2px) grayscale(100%) brightness(50%);
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+    }
+}
+
+@media not (pointer: fine) {
+    .project-box.touched .project-overlay {
         opacity: 1;
     }
 
-    .portfolio .project-box .project-img {
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .portfolio .project-box:hover .project-img {
+    .project-box.touched .project-img {
         -webkit-filter: blur(2px);
         filter: blur(2px);
         -webkit-transform: scale(1.03);
         transform: scale(1.03);
     }
 
-    .portfolio .project-box.touched .project-img {
+    .project-box.touched.dimmed .project-img {
         -webkit-filter: blur(2px);
-        filter: blur(2px);
+        filter: blur(2px) grayscale(100%) brightness(50%);
         -webkit-transform: scale(1.03);
         transform: scale(1.03);
     }
+}
 
-    .portfolio .project-box .project-overlay-details {
-        width: 100%;
-        margin-top: auto;
-        margin-bottom: auto;
-        padding: 20px;
-        text-align: center;
-        position: relative;
-        z-index: 2;
-    }
+
+.dimmed img {
+    filter: grayscale(100%) brightness(50%);
+}
+
+
+
+
+.portfolio .project-box.touched .project-img {
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+.portfolio .project-box .project-overlay-details {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
 
 
 .ajax-container {

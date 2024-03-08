@@ -29,17 +29,16 @@
                 "The Whaddon Show App"
 
                 ,new List<string>(){"A collaborative script writing, casting and show management application."
-                ,"Currently used by 30 people demonstrating..."
-                ,"Data Access, Authentication, Documentation and Monitoring of Public Api"
-                ,"Business logic and unit testing."
-                ,"Responsive front-end design and engaging user experience."
+                ,"Currently used by 30 people."
+                ,"Try it out!"
+               
                 }
                 ,new List<string>(){"react","gap","html","css","javascript","gap","csharp","dotnet","gap","sql","mongo","gap","azure"}
 
                 ,"_Project-WhaddonShow"
                 )
                 , "https://www.thewhaddonshow.org"
-                )
+                ).AddSeeItInActionLink("https://www.thewhaddonshow.org")
                 )
 
                 @await Html.PartialAsync("_PortfolioProject"
@@ -57,7 +56,7 @@
                 ,new List<string>(){"csharp","gap","sql","gap","excel-vba"}
                 ,"_Project-Chester"
                 )
-                )
+                ).AddSeeMoreLink()
                 )
 
 
@@ -79,7 +78,7 @@
 
                 ,"_Project-HightownWorkflow"
                 )
-                )
+                ).AddSeeMoreLink()
                 )
 
                 @await Html.PartialAsync("_PortfolioProject"
@@ -100,7 +99,7 @@
 
                 ,"_Project-DevApp"
                 )
-                )
+                ).AddSeeMoreLink()
                 )
 
             </div>
