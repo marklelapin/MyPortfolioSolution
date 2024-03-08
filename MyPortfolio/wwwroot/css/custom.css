@@ -8,16 +8,11 @@
 
 .green {
     color: rgb(133,160,50) !important; /*important required to overwrite bootstrap*/
-    border-color: rgb(133,160,50) !important; /*important required to overwrite bootstrap*/
-}
-
-.red {
-    color: rgb(231,2,35) !important; /*important required to overwrite bootstrap*/
-    border-color: rgb(231,2,35) !important; /*important required to overwrite bootstrap*/
+    border-color: rgb(133,160,50) !important;/*important required to overwrite bootstrap*/
 }
 
 .blue {
-    color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
+    color: rgb(53,120,178); /*important required to overwrite bootstrap*/
     border-color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
 }
 
@@ -42,13 +37,34 @@
     background-color: rgb(227,174,27) !important; /*important required to overwrite bootstrap*/
 }
 
+
+/*Buttons*/
+
 .btn-outline:not(:hover) {
+    color: inherit;
     background-color: transparent !important; /*important required to overwrite bootstrap*/
 }
 
-.btn-outline:hover {
+.btn:not(:hover) {
     color: white;
+    border-color: transparent;
 }
+
+@media (pointer: fine) {
+    .btn-outline:hover {
+        color: white !important;
+        border-color: transparent;
+    }
+
+    .btn:hover{
+        border-color: transparent;
+    }
+}
+
+#hire-me {
+    margin-top: 50px !important; /*Important required to overwrite important in utilities*/
+}
+
 
 
 
@@ -394,9 +410,10 @@ img.developer-icon {
 @media (max-width: 768px) {
     .project-detail-container {
         max-width: 95%;
-       padding: 3px;
+        padding: 3px;
     }
 }
+
 .project-detail-header {
     flex: auto;
     border-color: rgb(53,120,178);
@@ -462,13 +479,15 @@ img.developer-icon {
 .project-detail-description {
     flex: 1;
     padding: 10px 10px 10px 0px;
-    min-width:350px;
+    min-width: 350px;
     max-width: 500px;
 }
-.project-detail-description h5{
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
+
+    .project-detail-description h5 {
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
     .project-detail-description p {
         margin: 0;
         font-size: 0.9rem;
@@ -477,7 +496,7 @@ img.developer-icon {
 @media (max-width: 500px) {
     .project-detail-description {
         padding: 10px 0px 10px 0px;
-        min-width:200px;
+        min-width: 200px;
     }
 }
 
@@ -493,13 +512,12 @@ img.developer-icon {
     height: 450px;
 }
 
-#chester-snapshots{
+#chester-snapshots {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     gap: 10px;
-
 }
 
 #chester-rota {
