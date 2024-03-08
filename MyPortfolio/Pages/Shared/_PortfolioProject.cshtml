@@ -1,7 +1,7 @@
 ﻿@model MyPortfolio.Pages.Shared._PortfolioProjectModel
 @{
 }
-<div id="@Model.HtmlId" class="project project-box rounded @Model.Project.Filter">
+<div id="@Model.HtmlId" class="project project-box rounded @Model.Project.Filter @Model.OpenModalOnClick()">
     <div class="project-image-container rounded">
         <img class="d-block project-img" src="@Model.Project.ImageSource" portfolio-filter alt="@Model.Project.ImageAlt">
         <div class="text-white fw-600 project-title h3">
@@ -12,9 +12,9 @@
                 }
             }
         </div>
-        <div class="project-overlay clickable @Model.OpenModalOnClick()">
+        <div class="project-overlay">
 
-            <a class="stretched-link" href="@Model.Link" target="_blank" title="@Model.Link">
+            @* <a class="stretched-link" href="@Model.Link" target="_blank" title="@Model.Link"> *@
                 <div class="project-overlay-details">
                     <h5 class="text-white fw-400">@Model.ProjectOverlay.AppTitle</h5>
                     @foreach (var line in Model.ProjectOverlay.AppDescription)
@@ -24,10 +24,35 @@
                     @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(Model.ProjectOverlay.DeveloperIcons))
 
                 </div>
-            </a>
+    @*         </a> *@
+
 
         </div>
 
     </div>
+    @if (Model.SeeMoreLink != null)
+    {
+        <div class="see-more-link" data-link="project-details">
+
+            <div class="see-more-link-text">
+                <div>see</div>
+                <div>more</div>
+            </div>
+        </div>
+    }
+    @if (Model.SeeItInActionLink != null)
+    {
+        <a href="@Model.SeeItInActionLink" title="@Model.SeeItInActionLink" target="_blank">
+            <div class="see-it-in-action-triangle">
+
+                <div class="see-it-in-action-text" data-link="@Model.SeeItInActionLink">
+                    <div>see it</div>
+                    <div>in action</div>
+                </div>
+
+            </div>
+        </a>
+
+    }
 
 </div>

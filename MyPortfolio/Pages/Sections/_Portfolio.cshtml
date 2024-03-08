@@ -29,17 +29,16 @@
                 "The Whaddon Show App"
 
                 ,new List<string>(){"A collaborative script writing, casting and show management application."
-                ,"Currently used by 30 people demonstrating..."
-                ,"Data Access, Authentication, Documentation and Monitoring of Public Api"
-                ,"Business logic and unit testing."
-                ,"Responsive front-end design and engaging user experience."
+                ,"Currently used by 30 people."
+                ,"Try it out!"
+
                 }
                 ,new List<string>(){"react","gap","html","css","javascript","gap","csharp","dotnet","gap","sql","mongo","gap","azure"}
 
                 ,"_Project-WhaddonShow"
                 )
                 , "https://www.thewhaddonshow.org"
-                )
+                ).AddSeeItInActionLink("https://www.thewhaddonshow.org")
                 )
 
                 @await Html.PartialAsync("_PortfolioProject"
@@ -57,7 +56,7 @@
                 ,new List<string>(){"csharp","gap","sql","gap","excel-vba"}
                 ,"_Project-Chester"
                 )
-                )
+                ).AddSeeMoreLink()
                 )
 
 
@@ -79,7 +78,7 @@
 
                 ,"_Project-HightownWorkflow"
                 )
-                )
+                ).AddSeeMoreLink()
                 )
 
                 @await Html.PartialAsync("_PortfolioProject"
@@ -100,90 +99,93 @@
 
                 ,"_Project-DevApp"
                 )
-                )
+                ).AddSeeMoreLink()
                 )
 
             </div>
             <div id="portfolio-modal" class="closed">
-                
+
                 <div id="project-detail-development" class="project-detail-container bg-light-1">
-                    <div class="project-detail-title">
-                        <h2>DevApp</h2>
-                    </div>
+                    @await Html.PartialAsync("_ProjectDetailsHeader",new _ProjectDetailsHeaderModel("DevApp","Tendering, project management and cashflow forecasting application for Housing Development."))
                     <div class="project-detail-content">
-                        <div class=" project-detail-description">
-                            <h2>Brief</h2>
-                            <p>ad jkfasjfkljsdfkl asdklfsad</p>
-                            <h2>User</h2>
-                            <p>A tendering, project management and cashflow forecasting application for Housing Development.</p>
-                            <h2>Solution</h2>
-                            <p>Used to approve and monitor over £1.4 billion of expenditure over 9 years.</p>
-                            <h2>Adoption</h2>
-                            <p>Used to approve and monitor over £1.4 billion of expenditure over 9 years.</p>
-                            <h2>My Involvement</h2>
-                            <p>Technologies used: C#, SQL, Excel VBA</p>
+                        @await Html.PartialAsync("_ProjectDetailsText",
+                        new _ProjectDetailsTextModel()
+                        .AddBrief("To reduce 6 sources of truth in development information to 1.")
+                        .AddBrief("To provide more accurate, up to date and live information on build progress and cashflow forecasts.")
+                        .AddBrief("To reduce the administrative burden on Development officers")
+                        .AddClient("15 Development Officers, 150 users of Development information across Finance and Operations.")
+                        .AddSolution("A financial appraisal tool allowing quick bids to be created with limited data.")
+                        .AddSolution("Turning into a Project management tool as more data is added to provide more accurate estimates.")
+                        .AddSolution("Integration of data with 3rd party systems to reduce sources of truth and data entry.")
+                        .AddSolution("Automated cashflow forecasting with exports to finance system etc.")
+                        .AddSolution("Live dashboards and reports and board appraisals produced directly from app.")
+                        .AddAdoption("Over £1.4 billion of development expenditure has been approved and managed over 9 years using the app.")
+                        .AddAdoption("1 source of truth and live reporting into all departments.")
+                        .AddMyInvolvement("Designed data architecture and UI for system.")
+                        .AddMyInvolvement("Pair programmed the complex calculation of cashflow forecasting.")
+                        .AddMyInvolvement("Improved performance of SQL queries and data imports.")
+                        .AddMyInvolvement("Coded dashboards and reports.")
+                        .AddMyInvolvement("Managed software developers, testers and business analysts on the project.")
+                        )
+                        <div id="devapp-snapshots">
+                            <div class="project-detail-box">
+                                <img id="devapp-board-report" src="images/projects/devapp-board-report.png" />
+                            </div>
+                            <div class="project-detail-box">
+                                <img id="devapp-summary" src="images/projects/devapp-summary.png" />
+                            </div>
                         </div>
-                        <div class="project-detail-box">
-                            <img id="devapp-board-report" src="images/projects/devapp-board-report.png" />
-                        </div>
-                        <div class="project-detail-box">
-                            <img id="devapp-summary" src="images/projects/devapp-summary.png" />
-                        </div>
+                    </div>
 
-                    </div>
-                    <div class="close-modal-on-click">
-                        <div class="close-modal-on-click-icon"><h5><i class="fa fa-times"></i></h5></div>
-                    </div>
                 </div>
-                
-                <div id="project-detail-care" class="project-detail-container bg-light-1">
-                    <div class="project-detail-title">
-                        <h2>Chester - Rota management and Payroll Application.</h2>
-                    </div>
-                    <div class="project-detail-content">
-                        <div class=" project-detail-description">
-                            <h3>DevApp</h3>
-                            <h2>Brief</h2>
-                            <p>ad jkfasjfkljsdfkl asdklfsad</p>
-                            <h2>User</h2>
-                            <p>A tendering, project management and cashflow forecasting application for Housing Development.</p>
-                            <h2>Solution</h2>
-                            <p>Used to approve and monitor over £1.4 billion of expenditure over 9 years.</p>
-                            <h2>Adoption</h2>
-                            <p>Used to approve and monitor over £1.4 billion of expenditure over 9 years.</p>
-                            <h2>My Involvement</h2>
-                            <p>Technologies used: C#, SQL, Excel VBA</p>
-                        </div>
-                        <div class="project-detail-box">
-                            <img id="chester-rota" src="images/projects/chester-rota.png" />
-                        </div>
-                        <div class="project-detail-box">
-                            <img id="chester-dashboard" src="images/projects/chester-dashboard.png" />
-                        </div>
 
-                    </div>
-                    <div class="close-modal-on-click">
-                        <div class="close-modal-on-click-icon"><h5><i class="fa fa-times"></i></h5></div>
+                <div id="project-detail-care" class="project-detail-container bg-light-1">
+                    @await Html.PartialAsync("_ProjectDetailsHeader",new _ProjectDetailsHeaderModel("Chester","Rota management and Payroll Application."))
+
+                    <div class="project-detail-content">
+                        @await Html.PartialAsync("_ProjectDetailsText",
+                        new _ProjectDetailsTextModel()
+                        .AddBrief("To Improve management of shift allocation across 85 Care schemes.")
+                        .AddBrief("Reduce administrative burden and errors within payroll system.")
+                        .AddClient("850 front line staff, 30 central office managers, 5 administrators.")
+                        .AddSolution("Rota creation tool to help scheme managers allocate fairly whilst ensuring contract hours were met.")
+                        .AddSolution("Automated calculation of overtime, holiday pay and sickness deductions.")
+                        .AddSolution("Management dashboards and reports to pro-actively manage unallocated shifts")
+                        .AddAdoption("Used extensively for last 10 years.")
+                        .AddAdoption("Entirely Digital System - No paper and no submission of timesheets.")
+                        .AddMyInvolvement("Designed data architecture and UI for system")
+                        .AddMyInvolvement("Pair programmed the complex calculation of deductions and overtime.")
+                        .AddMyInvolvement("Coded dashboards and reports.")
+                        .AddMyInvolvement("Managed software developers, testers and business analysts on the project")
+                        )
+                        <div id="chester-snapshots">
+                            <div class="project-detail-box">
+                                <img id="chester-rota" src="images/projects/chester-rota.png" />
+                            </div>
+                            <div class="project-detail-box">
+                                <img id="chester-dashboard" src="images/projects/chester-dashboard.png" />
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="project-detail-workflow" class="project-detail-container bg-light-1">
-                    <div class="project-detail-title">
-                        <h2>Hightown Workflow - Rota management and Payroll Application.</h2>
-                    </div>
+                    @await Html.PartialAsync("_ProjectDetailsHeader",new _ProjectDetailsHeaderModel("Hightown Workflow","Workflow monitoring application across multiple sytems."))
                     <div class="project-detail-content">
-                        <div class=" project-detail-description">
-                            <h3>DevApp</h3>
-                            <h2>Brief</h2>
-                            <p>ad jkfasjfkljsdfkl asdklfsad</p>
-                            <h2>User</h2>
-                            <p>A tendering, project management and cashflow forecasting application for Housing Development.</p>
-                            <h2>Solution</h2>
-                            <p>Used to approve and monitor over £1.4 billion of expenditure over 9 years.</p>
-                            <h2>Adoption</h2>
-                            <p>Used to approve and monitor over £1.4 billion of expenditure over 9 years.</p>
-                            <h2>My Involvement</h2>
-                            <p>Technologies used: C#, SQL, Excel VBA</p>
-                        </div>
+                        @await Html.PartialAsync("_ProjectDetailsText",
+                        new _ProjectDetailsTextModel()
+                        .AddBrief("In addition to in-house applications Hightown used a number of specialist 3rd party applications.")
+                        .AddBrief("Requirement to provide a single monitoring solution for workflows across the organisation.")
+                        .AddClient("1000 staff across Finance, Development, Sales, Asset Management, Operations and Care")
+                        .AddSolution("Diagram Tool to draw up workflows and map data between systems.")
+                        .AddSolution("A SQL Connecting Field table mapped data between systems and highlighted data discrepancies to be fixed.")
+                        .AddSolution("Interactive Dashboards and Reports linked with Active Directory to provide tailored views.")
+                        .AddSolution("Hightown Documents module added to provide greater interaction and customisation of workflows.")
+                        .AddAdoption("Used extensively across all Departments for last 8 years.")
+                        .AddMyInvolvement("Designed data architecture and UI for system.")
+                        .AddMyInvolvement("Pair programmed performance improvements as application scaled up.")
+                        .AddMyInvolvement("Coded dashboards and reports.")
+                        .AddMyInvolvement("Managed software developers, testers and business analysts on the project.")
+                        )
                         <div id="workflow-snapshots">
                             <div class="project-detail-box">
                                 <img id="workflow-diagram-tool" src="images/projects/workflow-diagram-tool.png" />
@@ -193,10 +195,7 @@
                             </div>
 
                         </div>
-                        
-                    </div>
-                    <div class="close-modal-on-click">
-                        <div class="close-modal-on-click-icon"><h5><i class="fa fa-times"></i></h5></div>
+
                     </div>
                 </div>
 

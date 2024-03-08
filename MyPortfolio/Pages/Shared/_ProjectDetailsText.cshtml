@@ -1,0 +1,47 @@
+﻿@model MyPortfolio.Pages.Shared._ProjectDetailsTextModel
+@{
+}
+
+<div class=" project-detail-description">
+    @if (Model.Brief.Count > 1)
+    {
+        <h5>Brief</h5>
+        @foreach (var brief in Model.Brief)
+        {
+            <p>@brief</p>
+        }
+    }
+    @if (Model.Client.Count > 1)
+    {
+        <h5>Client</h5>
+        @foreach (var client in Model.Client)
+        {
+            <p>@client</p>
+        }
+    }
+    @if (Model.Solution.Count > 1)
+    {
+        <h5>Solution</h5>
+        @foreach (var solution in Model.Solution)
+        {
+            <p>@solution</p>
+        }
+    }
+    @if (Model.Adoption.Count > 1)
+    {
+        <h5>Adoption</h5>
+        @foreach (var adoption in Model.Adoption)
+        {
+            <p>@adoption</p>
+        }
+    }
+    @if (Model.MyInvolvement.Count > 1)
+    {
+        <h5>My Involvement</h5>
+        @foreach (var involvement in Model.MyInvolvement)
+        {
+            <p>@involvement</p>
+        }
+    }
+
+</div>

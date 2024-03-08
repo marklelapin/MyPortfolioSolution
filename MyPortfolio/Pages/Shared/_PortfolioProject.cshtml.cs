@@ -11,8 +11,8 @@ namespace MyPortfolio.Pages.Shared
         public PortfolioProjectOverlay ProjectOverlay { get; set; }
 
         public string? Link { get; set; } = null;
-        public string? ActionLink { get; set; } = null;
-        public string? ActionButtonText { get; set; } = null;
+        public string? SeeMoreLink { get; set; } = null;
+        public string? SeeItInActionLink { get; set; } = null;  
 
         public _PortfolioProjectModel(string htmlId, PortfolioProject project, PortfolioProjectOverlay projectOverlay, string? link = null)
         {
@@ -26,10 +26,16 @@ namespace MyPortfolio.Pages.Shared
         }
 
 
-        public void AddActionLink( string actionLink, string actionButtonText)
+        public _PortfolioProjectModel AddSeeMoreLink()
         {
-            ActionLink = actionLink;
-            ActionButtonText = actionButtonText;
+           SeeMoreLink = "project-details";
+            return this;
+        }
+
+        public _PortfolioProjectModel AddSeeItInActionLink(string link)
+        {
+            SeeItInActionLink = link;
+            return this;
         }
 
         public _PortfolioProjectModel Build()

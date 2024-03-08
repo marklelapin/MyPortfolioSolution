@@ -8,16 +8,11 @@
 
 .green {
     color: rgb(133,160,50) !important; /*important required to overwrite bootstrap*/
-    border-color: rgb(133,160,50) !important; /*important required to overwrite bootstrap*/
-}
-
-.red {
-    color: rgb(231,2,35) !important; /*important required to overwrite bootstrap*/
-    border-color: rgb(231,2,35) !important; /*important required to overwrite bootstrap*/
+    border-color: rgb(133,160,50) !important;/*important required to overwrite bootstrap*/
 }
 
 .blue {
-    color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
+    color: rgb(53,120,178); /*important required to overwrite bootstrap*/
     border-color: rgb(53,120,178) !important; /*important required to overwrite bootstrap*/
 }
 
@@ -42,13 +37,34 @@
     background-color: rgb(227,174,27) !important; /*important required to overwrite bootstrap*/
 }
 
+
+/*Buttons*/
+
 .btn-outline:not(:hover) {
+    color: inherit;
     background-color: transparent !important; /*important required to overwrite bootstrap*/
 }
 
-.btn-outline:hover {
+.btn:not(:hover) {
     color: white;
+    border-color: transparent;
 }
+
+@media (pointer: fine) {
+    .btn-outline:hover {
+        color: white !important;
+        border-color: transparent;
+    }
+
+    .btn:hover{
+        border-color: transparent;
+    }
+}
+
+#hire-me {
+    margin-top: 50px !important; /*Important required to overwrite important in utilities*/
+}
+
 
 
 
@@ -170,20 +186,97 @@ img.developer-icon {
     font-size: 1em;
 }
 
-.dimmed img {
-    filter: grayscale(100%) brightness(50%);
-}
 
 .project-img {
     width: 100%;
     height: 100%;
 }
 
-@media not all and (pointer: fine) {
+.see-more-link {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: white;
+    cursor: pointer;
+    z-index: 2000;
+    width: 45px;
+    height: 45px;
+    border-left: 45px solid transparent;
+    border-top: 45px solid transparent;
+    border-right: 45px solid black;
+    border-bottom: 45px solid black;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.see-more-link-text {
+    position: absolute;
+    width: 80px;
+    bottom: -40px;
+    right: -40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+@media (pointer: fine) {
+    .project-box:hover .see-more-link {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@media not (pointer: fine) {
+    .touched .see-more-link.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+
+
+
+
+.see-it-in-action-triangle {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-top: 50px solid transparent;
+    border-right: 50px solid #E3AE1B;
+    border-bottom: 50px solid #E3AE1B;
+    z-index: 10;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.see-it-in-action-text {
+    position: absolute;
+    width: 80px;
+    bottom: -45px;
+    right: -45px;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 10;
+}
+
+
+
+
+/*@media not all and (pointer: fine) {
     .project-overlay{
         visibility: hidden;
     }
-}
+}*/
 
 #whaddon-show {
     width: 740px;
@@ -275,6 +368,8 @@ img.developer-icon {
 
 
 #portfolio-modal {
+    display: block;
+    opacity: 1;
     position: fixed;
     top: 0;
     left: 0;
@@ -285,13 +380,14 @@ img.developer-icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 2s;
+    transition: all 0.3s ease-in-out;
     overflow: auto;
+    pointer-events: all;
 }
 
     #portfolio-modal.closed {
-        display: none;
-        transition: background-color 2s;
+        opacity: 0;
+        pointer-events: none;
     }
 
 
@@ -299,10 +395,11 @@ img.developer-icon {
     display: none;
     position: relative;
     max-width: 90%;
-    max-height: 90vh;
-    padding: 10px;
+    max-height: 80vh;
+    padding: 2rem;
     background-color: white;
-    margin-top: 80px;
+    margin-top: 85px;
+    margin-bottom: 85px;
 }
 
     .project-detail-container.show {
@@ -310,9 +407,39 @@ img.developer-icon {
         flex-direction: column;
     }
 
-.project-detail-title {
-    flex: auto;
+@media (max-width: 768px) {
+    .project-detail-container {
+        max-width: 95%;
+        padding: 3px;
+    }
 }
+
+.project-detail-header {
+    flex: auto;
+    border-color: rgb(53,120,178);
+    border-bottom-style: solid;
+}
+
+    .project-detail-header h3 {
+        margin: 0;
+    }
+
+.close-modal-on-click {
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+    .close-modal-on-click h5 {
+        margin: 0;
+    }
+
+.project-detail-title h2 {
+    margin: 0;
+}
+
+
+
+
 
 .project-detail-content {
     flex: 1;
@@ -321,8 +448,8 @@ img.developer-icon {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-    align-items: flex-start;
-    overflow:auto;
+    align-items: stretch;
+    overflow: auto;
 }
 
     .project-detail-content img {
@@ -344,27 +471,36 @@ img.developer-icon {
     border-style: solid;
     padding: 10px;
     border-radius: 3px;
-    box-shadow: 0px 0px 10px 0px gray;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
     background-color: white;
+    margin: 10px;
 }
 
 .project-detail-description {
     flex: 1;
-    padding: 10px;
-    min-width: 310px;
+    padding: 10px 10px 10px 0px;
+    min-width: 350px;
     max-width: 500px;
 }
 
-    .project-detail-description p {
+    .project-detail-description h5 {
+        margin-top: 10px;
+        margin-bottom: 0px;
     }
 
+    .project-detail-description p {
+        margin: 0;
+        font-size: 0.9rem;
+    }
 
-.close-modal-on-click {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    cursor: pointer;
+@media (max-width: 500px) {
+    .project-detail-description {
+        padding: 10px 0px 10px 0px;
+        min-width: 200px;
+    }
 }
+
+
 
 #devapp-board-report {
     width: 300px;
@@ -376,21 +512,29 @@ img.developer-icon {
     height: 450px;
 }
 
+#chester-snapshots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+
 #chester-rota {
-    width: 300px;
-    height: 400px;
+    max-width: 300px;
+    height: auto;
 }
 
 #chester-dashboard {
-    width: 300px;
-    height: 250px;
+    max-width: 300px;
+    height: auto;
 }
 
 
-#workflow-snapshots{
-    display:flex;
-    flex-direction:column;
-    justify-content: space-around;
+#workflow-snapshots {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     gap: 10px;
 }
 
@@ -403,4 +547,3 @@ img.developer-icon {
     width: 350px;
     height: 250px;
 }
-
