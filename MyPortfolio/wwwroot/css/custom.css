@@ -8,7 +8,7 @@
 
 .green {
     color: rgb(133,160,50) !important; /*important required to overwrite bootstrap*/
-    border-color: rgb(133,160,50) !important;/*important required to overwrite bootstrap*/
+    border-color: rgb(133,160,50) !important; /*important required to overwrite bootstrap*/
 }
 
 .blue {
@@ -56,7 +56,7 @@
         border-color: transparent;
     }
 
-    .btn:hover{
+    .btn:hover {
         border-color: transparent;
     }
 }
@@ -98,7 +98,7 @@ a.nav-link.blue.active::after {
     justify-content: center;
     align-items: center;
     column-gap: 40px;
-    row-gap: 20px;
+    row-gap: 5px;
 }
 
 .devloper-icon-group {
@@ -186,6 +186,11 @@ img.developer-icon {
     font-size: 1em;
 }
 
+.project-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .project-img {
     width: 100%;
@@ -193,34 +198,20 @@ img.developer-icon {
 }
 
 .see-more-link {
+    position: absolute;
     display: block;
     opacity: 0;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
+pointer-events: none;
+    bottom: 10px;
+    right: 10px;
     color: white;
-    cursor: pointer;
-    z-index: 2000;
-    width: 45px;
-    height: 45px;
-    border-left: 45px solid transparent;
-    border-top: 45px solid transparent;
-    border-right: 45px solid black;
-    border-bottom: 45px solid black;
-    transition: all 0.3s ease-in-out;
-    pointer-events: none;
+    font-weight: bold;
+    z-index: 10;
+    background-color: black;
+    padding: 5px 10px;
 }
 
-.see-more-link-text {
-    position: absolute;
-    width: 80px;
-    bottom: -40px;
-    right: -40px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
+
 
 @media (pointer: fine) {
     .project-box:hover .see-more-link {
@@ -240,37 +231,38 @@ img.developer-icon {
 
 
 
-.see-it-in-action-triangle {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-top: 50px solid transparent;
-    border-right: 50px solid #E3AE1B;
-    border-bottom: 50px solid #E3AE1B;
-    z-index: 10;
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
 
 .see-it-in-action-text {
     position: absolute;
-    width: 80px;
-    bottom: -45px;
-    right: -45px;
+    display: block;
+    bottom: 10px;
+    right: 10px;
     color: black;
     font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
     z-index: 10;
+    background-color: rgb(227,174,27);
+    padding: 5px 10px;
 }
 
 
+.learn-more.mobile-device {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
 
+.project-box:hover .learn-more{
+    color:transparent;
+}
+
+.touched .learn-more{
+color:transparent;
+}
 
 /*@media not all and (pointer: fine) {
     .project-overlay{
@@ -288,12 +280,12 @@ img.developer-icon {
 @media (max-width: 920px) {
     #whaddon-show {
         width: 100%;
-        height: auto;
+        min-height: 260px;
     }
 
-        #whaddon-show > img {
+        #whaddon-show .project-img {
             width: 740px;
-            height: 430px;
+            height: 436px;
         }
 }
 
@@ -546,4 +538,36 @@ img.developer-icon {
 #workflow-diagram-tool {
     width: 350px;
     height: 250px;
+}
+
+
+.brands-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.number-box {
+    background-color: rgb(20,32,41);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+    .number-box h4 {
+        color: white;
+    }
+
+    .number-box p {
+        color: white;
+    }
+
+.featured-box.number-box {
 }

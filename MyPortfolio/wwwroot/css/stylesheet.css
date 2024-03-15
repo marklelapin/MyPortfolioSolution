@@ -2597,7 +2597,7 @@ html[dir="rtl"] .nav.nav-separator .nav-item + .nav-item .nav-link:after {
 }
 
 /*=== 5.8 Brands Grid ===*/
-.brands-grid {
+/*.brands-grid {
     overflow: hidden;
 }
 
@@ -2634,7 +2634,7 @@ html[dir="rtl"] .nav.nav-separator .nav-item + .nav-item .nav-link:after {
 
     .brands-grid.separator-border.separator-border-light > .row > *:before {
         border-left: 1px dotted rgba(250, 250, 250, 0.15);
-    }
+    }*/
 
 /*=== 5.9 Portfolio ===*/
 .portfolio .project-box {

@@ -63,20 +63,6 @@
 </section>
 <!-- Contact Me end -->
 
-
-@*script to add to custom js :
--------------------------
-        document.forms[0].onsubmit = (event) => {
-            let formData = new FormData(document.forms[0]);
-            fetch('', {
-                method: 'post',
-                body: new URLSearchParams(formData)
-            })
-                .then(() => {
-                    alert('Posted using Fetch');
-                });
-            return false;
-        };*@
    
 
 
