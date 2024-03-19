@@ -201,7 +201,7 @@ img.developer-icon {
     position: absolute;
     display: block;
     opacity: 0;
-pointer-events: none;
+    pointer-events: none;
     bottom: 10px;
     right: 10px;
     color: white;
@@ -244,24 +244,29 @@ pointer-events: none;
     padding: 5px 10px;
 }
 
-
-.learn-more.mobile-device {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 1.5em;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
+.learn-more {
+    display: none;
 }
 
-.project-box:hover .learn-more{
-    color:transparent;
+
+    .learn-more.mobile-device {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.5em;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    }
+
+.project-box:hover .learn-more {
+    color: transparent;
 }
 
-.touched .learn-more{
-color:transparent;
+.touched .learn-more {
+    color: transparent;
 }
 
 /*@media not all and (pointer: fine) {

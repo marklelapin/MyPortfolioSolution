@@ -1,7 +1,7 @@
 ﻿@model MyPortfolio.Pages.Shared._PortfolioProjectModel
 @{
 }
-<div id="@Model.HtmlId" class="project project-box rounded @Model.Project.Filter @Model.OpenModalOnClick()">
+<div id="@Model.HtmlId" class="project project-box rounded @Model.Project.Filter @Model.ActionOnClick() clickable" data-link="@Model.SeeItInActionLink">
     <a href="@Model.SeeItInActionLink" title="@Model.SeeItInActionLink" target="_blank">
         <div class="project-image-container rounded">
             <img class="d-block project-img" src="@Model.Project.ImageSource" portfolio-filter alt="@Model.Project.ImageAlt">
@@ -26,7 +26,7 @@
                     @await Html.PartialAsync("_DeveloperIcons",new _DeveloperIconsModel(Model.ProjectOverlay.DeveloperIcons))
 
                 </div>
-                @*         </a> *@
+       
 
 
             </div>
@@ -37,22 +37,15 @@
     @if (Model.SeeMoreLink != null)
     {
         <div class="see-more-link" data-link="project-details">
-
- 
                see more <span> <i class="fas fa-arrow-right"></i></span>
-                
         </div>
     }
     @if (Model.SeeItInActionLink != null)
     {
         <a href="@Model.SeeItInActionLink" title="@Model.SeeItInActionLink" target="_blank">
-        
-
                 <div class="see-it-in-action-text" data-link="@Model.SeeItInActionLink">
                     see it in action!<span> <i class="fas fa-arrow-right"></i></span>
                 </div>
-
-
         </a>
 
     }

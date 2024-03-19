@@ -10,7 +10,7 @@ var currentProjectsFilter = "*"
 const projectsFilterMenu = document.querySelectorAll("[data-filter]");
 const projects = document.querySelectorAll(".project");
 
-const mouseExists = false //matchMedia('(pointer:fine)').matches;
+const mouseExists = matchMedia('(pointer:fine)').matches;
 
 //Contact Form Ajax
 document.forms[0].onsubmit = (event) => { //TODO - as part of making the contact form a 'component' refer specifically to contact form not just form[0] 
@@ -98,11 +98,6 @@ function updateProjectsFilter() {
 -------------------------------------- */
 
 document.querySelectorAll(".project-box").forEach(element => {
-    if (element.classList.contains("open-modal-on-click")) element.classList.add("clickable");
-    element.addEventListener("click", (event) => handleProjectBoxClick(event, element));
-});
-document.querySelectorAll(".project-box").forEach(element => {
-    if (element.classList.contains("go-to-link-on-click")) element.classList.add("clickable");
     element.addEventListener("click", (event) => handleProjectBoxClick(event, element));
 });
 document.querySelectorAll(".close-modal-on-click").forEach(element => {
@@ -126,26 +121,35 @@ if (mouseExists === false) {
 
 
 function handleProjectBoxClick(event, projectBox) {
+    
+    console.log('handleProjectBoxClick',projectBox.classList.contains("open-modal-on-click"))
+    if (mouseExists && projectBox.classList.contains("open-modal-on-click")) {
+        openProjectModal(event, projectBox); return;
+    }
+    if (mouseExists && projectBox.classList.contains("go-to-link-on-click")) {
+        handleActionLink(event, projectBox); return;
+    }
+        
 
-    if (mouseExists) {
-        if (projectBox.classList.contains("open-modal-on-click")) openProjectModal(event, projectBox);
-        if (projectBox.classList.contains("go-to-link-on-click")) handleActionLink(event, projectBox);
-        return;
+    if (!mouseExists && projectBox.classList.contains("touched") && projectBox.classList.contains("go-to-link-on-click")) {
+        handleActionLink(event, projectBox);
     }
     //mouseDoesNotExist
-    toggleTouched(projectBox);
+    toggleTouched(event,projectBox);
 }
 
-function toggleTouched(projectBox) {
+function toggleTouched(event,projectBox) {
+    event.preventDefault()
     if (projectBox.classList.contains("touched")) {
         projectBox.classList.remove("touched")
     } else {
         projectBox.classList.add("touched")
     }
-
+    console.log('toggletouched',projectBox.classList)
     document.querySelectorAll(".project-box").forEach(element => {
         if (element !== projectBox) { element.classList.remove("touched") }
     });
+    console.log('toggletouched', projectBox.classList)
 }
 
 

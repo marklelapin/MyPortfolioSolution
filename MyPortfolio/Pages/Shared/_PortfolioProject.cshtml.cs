@@ -43,12 +43,12 @@ namespace MyPortfolio.Pages.Shared
             return this;
         }
 
-        public string OpenModalOnClick()
+        public string ActionOnClick()
         {
             if (Link == null) {
                 return "open-modal-on-click";
-            }
-            return "";
+            } 
+            return "go-to-link-on-click";
         }   
     }
 }
